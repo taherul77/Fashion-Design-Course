@@ -1,19 +1,23 @@
-import { Outlet } from "react-router-dom"
+import { Outlet, useLocation } from "react-router-dom"
 import Header from "./components/Header/Header"
 import Footer from "./components/Footer/Footer"
 
 function App() {
+  
+  const location = useLocation();
+
+  const onHeaderFooter = location.pathname.includes('login') || location.pathname.includes('register')
 
   return (
     <>
-    <div className="bg-white">
-   <Header></Header>
+       <div className="bg-white">
+   { onHeaderFooter ||  <Header></Header>}
    
     <Outlet></Outlet>
 
    
      
-   <Footer></Footer>
+    { onHeaderFooter || <Footer></Footer>}
     </div>
     
     </>
