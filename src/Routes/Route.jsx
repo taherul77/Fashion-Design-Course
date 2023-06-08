@@ -7,6 +7,8 @@ import AllClasses from "../pages/AllClasses/AllClasses";
 import AllInstructors from "../pages/AllInstructors/AllInstructors";
 import Dashboard from "../dashboard/Dashboard/Dashboard";
 import MySelected from "../dashboard/MySelected/MySelected";
+import StudentHome from "../dashboard/StudentHome/StudentHome";
+import StudentPayment from "../dashboard/StudentPayment/StudentPayment";
 
 
 
@@ -47,6 +49,18 @@ export const router = createBrowserRouter([
         {
           path:'my-selected',
           element:<MySelected></MySelected>
+        },
+        {
+          path:'student-home',
+          element:<StudentHome></StudentHome>
+        },
+        {
+          path:'student-payment',
+          element:<StudentPayment></StudentPayment>
+        },
+        {
+          path:'student-review',
+          element:<StudentPayment></StudentPayment>
         }
       ]
     }
