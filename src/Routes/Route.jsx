@@ -5,6 +5,9 @@ import Home from "../pages/Home/Home";
 import Register from "../pages/Register/Register";
 import AllClasses from "../pages/AllClasses/AllClasses";
 import AllInstructors from "../pages/AllInstructors/AllInstructors";
+import Dashboard from "../dashboard/Dashboard/Dashboard";
+import MySelected from "../dashboard/MySelected/MySelected";
+
 
 
 export const router = createBrowserRouter([
@@ -34,8 +37,19 @@ export const router = createBrowserRouter([
           element:<AllInstructors></AllInstructors>
 
         }
+       
       ]
     },
+    {
+      path: "/dashboard",
+      element: <Dashboard></Dashboard>,
+      children:[
+        {
+          path:'my-selected',
+          element:<MySelected></MySelected>
+        }
+      ]
+    }
 
   ]);
 

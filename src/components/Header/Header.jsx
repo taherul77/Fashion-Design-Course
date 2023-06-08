@@ -5,9 +5,17 @@ import { AuthContext } from "../../Provider/AuthProvider";
 
 import { CgProfile } from "react-icons/cg";
 import { LuShoppingBag } from "react-icons/lu";
+import useFetch from "../../hooks/useFetch";
+import { BASE_URL } from "../../hooks/global";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
+  const cart = useFetch(`${BASE_URL}/course-cart?email=${user?.email}`)
+
+  const { data } = cart;
+
+  const cartItems = data;
+  console.log(cartItems.length);
 
   const signOut = () => {
     logOut()
@@ -208,13 +216,12 @@ const navItemRight =(<>
             </ul>
           </>
         )}
-         <Link to="/dashboard/my-cart">
+         <Link to="/dashboard/my-selected">
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle">
               <div className="indicator text-2xl">
                 <LuShoppingBag></LuShoppingBag>
-
-                <span className="badge badge-sm indicator-item">+</span>
+                <span className="badge badge-sm indicator-item">+{cartItems.length}</span>
               </div>
             </label>
           </div>
