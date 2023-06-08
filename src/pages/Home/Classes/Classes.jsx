@@ -6,13 +6,13 @@ import { AuthContext } from "../../../Provider/AuthProvider";
 
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import useInstructor from "../../../hooks/useInstructor";
 import { BASE_URL } from "../../../hooks/global";
+import useCart from "../../../hooks/useCart";
 
 const Classes = ({ img, _id, title, seats, instructor, price }) => {
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
-   const {refetch} = useInstructor();
+   const {refetch} = useCart();
 
   const handleAddToCart = () => {
     if (user && user.email) {

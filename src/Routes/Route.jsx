@@ -10,6 +10,7 @@ import MySelected from "../dashboard/MySelected/MySelected";
 import StudentHome from "../dashboard/StudentHome/StudentHome";
 import StudentPayment from "../dashboard/StudentPayment/StudentPayment";
 import StudentEnrolled from "../dashboard/StudentEnrolled/StudentEnrolled";
+import StudentReview from "../dashboard/StudentReview/StudentReview";
 
 
 
@@ -61,7 +62,7 @@ export const router = createBrowserRouter([
         },
         {
           path:'student-review',
-          element:<StudentPayment></StudentPayment>
+          element:<StudentReview></StudentReview>
         },
         {
           path:'student-enrolled',
