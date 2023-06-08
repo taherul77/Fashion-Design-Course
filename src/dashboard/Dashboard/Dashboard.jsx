@@ -94,7 +94,7 @@ const Dashboard = () => {
           
           </>:<>
             <li><NavLink
-          to="/dashboard/home"
+          to="/dashboard/student-home"
           aria-label="Our HomePage"
           title="Our HomePage"
           className={({ isActive }) =>
@@ -107,7 +107,7 @@ const Dashboard = () => {
         </NavLink></li>
        
         <li><NavLink
-          to="/dashboard/payment"
+          to="/dashboard/student-payment"
           aria-label="Our HomePage"
           title="Our HomePage"
           className={({ isActive }) =>
@@ -131,7 +131,7 @@ const Dashboard = () => {
          <FaShoppingCart></FaShoppingCart> My Selected Classes <span>+</span>
         </NavLink></li>
         <li><NavLink
-          to="/dashboard/reviews"
+          to="/dashboard/student-review"
           aria-label="Our HomePage"
           title="Our HomePage"
           className={({ isActive }) =>
@@ -143,7 +143,7 @@ const Dashboard = () => {
          <FaStar></FaStar>MY REVIEWS
         </NavLink></li>
         <li><NavLink
-          to="/dashboard/my-booking"
+          to="/dashboard/student-enrolled"
           aria-label="Our HomePage"
           title="Our HomePage"
           className={({ isActive }) =>
@@ -182,18 +182,7 @@ const Dashboard = () => {
         >
          <AiOutlineMenu></AiOutlineMenu> MENU
         </NavLink></li>
-        <li><NavLink
-          to="/shop"
-          aria-label="Our HomePage"
-          title="Our HomePage"
-          className={({ isActive }) =>
-            isActive
-              ? " border-md rounded-md bg-red-950 text-white"
-              : "font-medium  text-white"
-          }
-        >
-         <FaShoppingCart></FaShoppingCart> SHOP
-        </NavLink></li>
+        
        
       
         <li><NavLink
