@@ -48,7 +48,22 @@ const Login = () => {
             const saveUser = { displayName: user.displayName,
               email: user.email,
               photoURL: user.photoURL, }
-           
+            fetch('http://localhost:5000/users', {
+              method: 'POST',
+              headers: {
+                  'content-type': 'application/json'
+              },
+              body: JSON.stringify(saveUser)
+          })
+              .then(res => res.json())
+              .then(data => {
+                  if (data.insertedId) {
+                    setError("");
+                   
+                    
+                      
+                  }
+              })
               navigate(from, { replace: true });
             
           })

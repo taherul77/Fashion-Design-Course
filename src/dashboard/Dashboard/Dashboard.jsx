@@ -1,7 +1,7 @@
 
 
 import { NavLink, Outlet } from "react-router-dom";
-import { FaShoppingCart ,FaWallet , FaHome ,FaStar, FaBookmark,FaUtensils, FaBook, FaUsers } from 'react-icons/fa';
+import { FaShoppingCart ,FaWallet , FaHome , FaBookmark,FaUtensils, FaBook, FaUsers } from 'react-icons/fa';
 import { AiOutlineMenu,AiOutlineHome,AiOutlineContacts } from "react-icons/ai";
 
 
@@ -130,18 +130,7 @@ const Dashboard = () => {
         >
          <FaShoppingCart></FaShoppingCart> My Selected Classes <span>+</span>
         </NavLink></li>
-        <li><NavLink
-          to="/dashboard/student-review"
-          aria-label="Our HomePage"
-          title="Our HomePage"
-          className={({ isActive }) =>
-            isActive
-              ? " border-md uppercase rounded-md bg-red-950 text-white"
-              : "font-medium uppercase  text-white"
-          }
-        >
-         <FaStar></FaStar>MY REVIEWS
-        </NavLink></li>
+        
         <li><NavLink
           to="/dashboard/student-enrolled"
           aria-label="Our HomePage"
@@ -171,7 +160,7 @@ const Dashboard = () => {
          <AiOutlineHome></AiOutlineHome> HOME
         </NavLink></li>
         <li><NavLink
-          to="/menu"
+          to="/classes"
           aria-label="Our HomePage"
           title="Our HomePage"
           className={({ isActive }) =>
@@ -180,7 +169,7 @@ const Dashboard = () => {
               : "font-medium  text-white"
           }
         >
-         <AiOutlineMenu></AiOutlineMenu> MENU
+         <AiOutlineMenu></AiOutlineMenu> CLASSES
         </NavLink></li>
         
        

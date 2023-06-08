@@ -1,16 +1,48 @@
-import { useEffect } from "react";
+
 import { AiOutlineArrowLeft, AiOutlineDelete } from "react-icons/ai";
 import useCart from "../../hooks/useCart";
 import { Link } from "react-router-dom";
 import Wrapper from "../../components/Wrapper/Wrapper";
+import Swal from "sweetalert2";
 
 const MySelected = () => {
   const { course, refetch } = useCart();
   const total = course?.reduce((sum, item) => item.price + sum, 0);
   
-  useEffect(() => {
-    refetch();
-  }, [refetch]);
+  const handleDelete = (id) =>{
+    
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+            fetch(`http://localhost:5000/course/delete/${id}`,{
+                method: 'DELETE'
+            })
+            .then(res => res.json())
+            .then(data => {
+               
+                if(data.deletedCount>0){
+                    refetch();
+                    Swal.fire(
+                        'Deleted!',
+                        'Your file has been deleted.',
+                        'success'
+                      )
+                }
+            })
+
+
+
+        
+        }
+      })
+  }
 
   return (
     <div>
@@ -71,7 +103,7 @@ const MySelected = () => {
                     <td>Zemlak, Daniel and Leannon</td>
                     <td>Purple</td>
                     <th>
-                      <button className="btn btn-ghost text-2xl btn-xs">
+                      <button onClick={()=>handleDelete(course?._id)} className="btn btn-ghost text-2xl btn-xs">
                         <AiOutlineDelete></AiOutlineDelete>
                       </button>
                     </th>
@@ -114,7 +146,7 @@ const MySelected = () => {
             </div>
           </div>
         )}
-        <div></div>
+        
       </Wrapper>
     </div>
   );
