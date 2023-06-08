@@ -60,12 +60,12 @@ const Header = () => {
 const navItemRight =(<>
  <li>
         <NavLink
-          to="/shop"
-          aria-label="Our ShopPage"
-          title="Our ShopPage"
+          to="/instructors"
+          aria-label="Our InstructorsPage"
+          title="Our InstructorsPage"
           className={({ isActive }) =>
             isActive
-              ? " uppercase underline  bg-green-500 text-white"
+              ? " underline decoration-double decoration-green-700 uppercase text-white"
               : "uppercase font-medium  text-white"
           }
         >
@@ -79,8 +79,8 @@ const navItemRight =(<>
           title="Our ContactPage"
           className={({ isActive }) =>
             isActive
-              ? " border-md rounded-md bg-red-950 text-white"
-              : "font-medium  text-white"
+              ? " underline uppercase decoration-double decoration-green-700 text-white"
+              : "font-medium uppercase text-white"
           }
         >
           CONTACT US

@@ -3,7 +3,8 @@ import useFetch from "../../hooks/useFetch";
 
 import Loader from "../../components/Loader/Loader";
 import Wrapper from "../../components/Wrapper/Wrapper";
-import Cart from "./Cart";
+
+import Classes from "../Home/Classes/Classes";
 
 const AllClasses = () => {
   const getClasses = useFetch("http://localhost:5000/course");
@@ -25,12 +26,12 @@ const AllClasses = () => {
           <>
             <div className="grid grid-cols-12 lg:grid-cols-3">
               {classesItems?.map((classesItem) => (
-                <Cart
+                <Classes
                   key={classesItem?._id}
                   img={classesItem?.image}
                   title={classesItem?.name}
                   seats={classesItem?.available_seats}
-                  instructor={classesItem?.instructor_name}
+                  instructor={classesItem?.instructor?.name}
                   price={classesItem?.price}
                 />
               ))}

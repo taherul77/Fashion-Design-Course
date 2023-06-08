@@ -1,8 +1,14 @@
 [
   {
     "name": "Fashion Design Fundamentals",
-    "instructor_name": "Sarah Johnson",
-    "email": "sarah@gmail.com",
+    "instructor": {
+      "name": "Liam Wilson",
+      "image": "https://i.ibb.co/f92LtQB/95d06ef7f27544514b0b7176c06478e2.jpg",
+      "email": "liam@gmail.com",
+      "course_name": "Fashion Illustration Techniques",
+      "course_taken": 1
+    },
+
     "image": "https://i.ibb.co/f92LtQB/95d06ef7f27544514b0b7176c06478e2.jpg",
     "available_seats": 25,
     "price": 199.99,
@@ -13,8 +19,13 @@
   },
   {
     "name": "Introduction to Fashion Design",
-    "instructor_name": "Emily Thompson",
-    "email": "emily@gmail.com",
+    "instructor": {
+      "name": "Olivia Thompson",
+      "image": "https://i.ibb.co/f92LtQB/95d06ef7f27544514b0b7176c06478e2.jpg",
+      "email": "olivia@gmail.com",
+      "course_name": "Advanced Patternmaking and Draping",
+      "course_taken": 1
+    },
     "image": "https://i.ibb.co/k0CYHNS/design-innovation-centre-vilnius-academy-of-arts-design-school-show-dezeen-2364-col-5-852x557.jpg",
     "available_seats": 30,
     "price": 149.99,
@@ -24,11 +35,15 @@
     "prerequisites": "No prior experience or knowledge in fashion design is required. This course is suitable for beginners."
   },
 
-
   {
     "name": "Fashion Design and Illustration",
-    "instructor_name": "Alexandra Roberts",
-    "email": "alexandra@gmail.com",
+    "instructor": {
+      "name": "Emma Lee",
+      "image": "https://i.ibb.co/f92LtQB/95d06ef7f27544514b0b7176c06478e2.jpg",
+      "email": "emma@gmail.com",
+      "course_name": "Fashion Styling and Image Consulting",
+      "course_taken": 1
+    },
     "image": "https://i.ibb.co/48NnWcw/fashion-designing-steps.jpg",
     "available_seats": 20,
     "price": 199.99,
@@ -39,8 +54,13 @@
   },
   {
     "name": "Fashion Design Techniques",
-    "instructor_name": "Michael Anderson",
-    "email": "michael@gmail.com",
+    "instructor": {
+      "name": "Noah Smith",
+      "image": "https://i.ibb.co/f92LtQB/95d06ef7f27544514b0b7176c06478e2.jpg",
+      "email": "noah@gmail.com",
+      "course_name": "Fashion Marketing Strategies",
+      "course_taken": 1
+    },
     "image": "https://i.ibb.co/jJQ1Wqp/tdfg-webinar2-3-fashionunited-3lcbryz4-2022-05-19.jpg",
     "available_seats": 25,
     "price": 249.99,
@@ -51,8 +71,13 @@
   },
   {
     "name": "Patternmaking and Garment Construction",
-    "instructor_name": "Sophia Martinez",
-    "email": "sophia@gmail.com",
+    "instructor": {
+      "name": "Sophia Davis",
+      "image": "https://i.ibb.co/f92LtQB/95d06ef7f27544514b0b7176c06478e2.jpg",
+      "email": "sophia@gmail.com",
+      "course_name": "Textile Design for Fashion",
+      "course_taken": 1
+    },
     "image": "https://i.ibb.co/pjY7rXf/Title-Image-1.jpg",
     "available_seats": 15,
     "price": 299.99,
@@ -63,8 +88,13 @@
   },
   {
     "name": "Fashion Sketching and Rendering",
-    "instructor_name": "Olivia Davis",
-    "email": "olivia@gmail.com",
+    "instructor": {
+      "name": "Ethan Brown",
+      "image": "https://i.ibb.co/f92LtQB/95d06ef7f27544514b0b7176c06478e2.jpg",
+      "email": "ethan@gmail.com",
+      "course_name": "Fashion Branding and Communication",
+      "course_taken": 1
+    },
     "image": "https://i.ibb.co/1Qp4LmZ/199038048-futuristic-woman-and-mannequins-with-paper-hats-3d-rendering.jpg",
     "available_seats": 20,
     "price": 199.99,
@@ -75,8 +105,13 @@
   },
   {
     "name": "Textile Design for Fashion",
-    "instructor_name": "Sophie Anderson",
-    "email": "sophie@gmail.com",
+    "instructor": {
+      "name": "Isabella Johnson",
+      "image": "https://i.ibb.co/f92LtQB/95d06ef7f27544514b0b7176c06478e2.jpg",
+      "email": "isabella@gmail.com",
+      "course_name": "Fashion Photography",
+      "course_taken": 1
+    },
     "image": "https://i.ibb.co/7JSgSMg/admfastextiles-print-room-kelly-marie-ws-131341490050272026.jpg",
     "available_seats": 15,
     "price": 249.99,
@@ -87,8 +122,13 @@
   },
   {
     "name": "Fashion Business and Marketing",
-    "instructor_name": "David Smith",
-    "email": "david@gmail.com",
+    "instructor": {
+      "name": "Mia Anderson",
+      "image": "https://i.ibb.co/f92LtQB/95d06ef7f27544514b0b7176c06478e2.jpg",
+      "email": "mia@gmail.com",
+      "course_name": "Fashion Business Management",
+      "course_taken": 1
+    },
     "image": "https://i.ibb.co/jzJQvgv/istockphoto-1320225533-612x612.jpg",
     "available_seats": 30,
     "price": 299.99,
@@ -99,8 +139,13 @@
   },
   {
     "name": "Fashion Portfolio Development",
-    "instructor_name": "Jennifer Roberts",
-    "email": "jennifer@gmail.com",
+    "instructor": {
+      "name": "Aiden Taylor",
+      "image": "https://i.ibb.co/f92LtQB/95d06ef7f27544514b0b7176c06478e2.jpg",
+      "email": "aiden@gmail.com",
+      "course_name": "Fashion Retail Buying",
+      "course_taken": 1
+    },
     "image": "https://i.ibb.co/pQG0Hc8/8454e57a54ad95f41fa44932fc7f94117314edd4.jpg",
     "available_seats": 20,
     "price": 249.99,
@@ -111,8 +156,13 @@
   },
   {
     "name": "Fashion Branding and Communication",
-    "instructor_name": "Sarah Thompson",
-    "email": "sarah@gmail.com",
+    "instructor": {
+      "name": "Abigail Johnson",
+      "image": "https://i.ibb.co/f92LtQB/95d06ef7f27544514b0b7176c06478e2.jpg",
+      "email": "abigail@gmail.com",
+      "course_name": "Fashion History and Trends",
+      "course_taken": 1
+    },
     "image": "https://i.ibb.co/FVhFVdq/8-E0-A490-D-64-F9-443-F-9-CAA-951259-CE2875-1024x768.jpg",
     "available_seats": 25,
     "price": 299.99,
@@ -123,8 +173,13 @@
   },
   {
     "name": "Fashion History and Trends",
-    "instructor_name": "Emily Wilson",
-    "email": "emily@gmail.com",
+    "instructor": {
+      "name": "Elijah Wilson",
+      "image": "https://i.ibb.co/f92LtQB/95d06ef7f27544514b0b7176c06478e2.jpg",
+      "email": "elijah@gmail.com",
+      "course_name": "Fashion Design and Illustration",
+      "course_taken": 1
+    },
     "image": "https://i.ibb.co/Vmk6Q8M/07320ead80f90894af52f3db31b34c9a.jpg",
     "available_seats": 30,
     "price": 199.99,
@@ -135,8 +190,13 @@
   },
   {
     "name": "Fashion Styling and Image Consulting",
-    "instructor_name": "Jessica Anderson",
-    "email": "jessica@gmail.com",
+    "instructor": {
+      "name": "Charlotte Thompson",
+      "image": "https://i.ibb.co/f92LtQB/95d06ef7f27544514b0b7176c06478e2.jpg",
+      "email": "charlotte@gmail.com",
+      "course_name": "Fashion Portfolio Development",
+      "course_taken": 1
+    },
     "image": "https://i.ibb.co/xJXfkgd/Fashion-Style-Image-Courses-Online.jpg",
     "available_seats": 20,
     "price": 249.99,
@@ -148,8 +208,13 @@
 
   {
     "name": "Draping and Advanced Garment Construction",
-    "instructor_name": "Michael Johnson",
-    "email": "michael@gmail.com",
+    "instructor": {
+      "name": "Ava Smith",
+      "image": "https://i.ibb.co/f92LtQB/95d06ef7f27544514b0b7176c06478e2.jpg",
+      "email": "ava@gmail.com",
+      "course_name": "Fashion Sketching and Rendering",
+      "course_taken": 1
+    },
     "image": "https://i.ibb.co/rdjf4zH/9414d8bc1de6659c4b53e31a818b9032.jpg",
     "available_seats": 15,
     "price": 299.99,
