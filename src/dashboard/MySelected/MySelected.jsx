@@ -45,7 +45,7 @@ const MySelected = () => {
   }
 
   return (
-    <div>
+    <div className="w-full max-auto">
       <Wrapper className="pt-14 md:pt-20 space-y-14 w-[100%] lg:space-y-20">
         {!course || course?.length === 0 ? (
           <div className="h-[calc(100vh-10rem)] flex justify-center items-center">

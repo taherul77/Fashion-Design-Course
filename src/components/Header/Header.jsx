@@ -15,7 +15,7 @@ const Header = () => {
   const { data } = cart;
 
   const cartItems = data;
-  console.log(cartItems.length);
+
 
   const signOut = () => {
     logOut()
@@ -221,7 +221,7 @@ const navItemRight =(<>
             <label tabIndex={0} className="btn btn-ghost btn-circle">
               <div className="indicator text-2xl">
                 <LuShoppingBag></LuShoppingBag>
-                <span className="badge badge-sm indicator-item">+{cartItems.length}</span>
+                <span className="badge badge-sm indicator-item">+{cartItems?.length}</span>
               </div>
             </label>
           </div>

@@ -1,8 +1,9 @@
 
 
 import { NavLink, Outlet } from "react-router-dom";
-import { FaShoppingCart ,FaWallet , FaHome , FaBookmark,FaUtensils, FaBook, FaUsers } from 'react-icons/fa';
-import { AiOutlineMenu,AiOutlineHome,AiOutlineContacts } from "react-icons/ai";
+import { FaShoppingCart ,FaWallet , FaHome , FaBookmark, FaUsers } from 'react-icons/fa';
+import { AiOutlineHome,} from "react-icons/ai";
+import useAdmin from "../../hooks/isAdmin";
 
 
 
@@ -10,7 +11,7 @@ import { AiOutlineMenu,AiOutlineHome,AiOutlineContacts } from "react-icons/ai";
 
 const Dashboard = () => {
  
-  const isAdmin = false;
+  const {isAdmin} = useAdmin();
   return (
     <div className="drawer lg:drawer-open">
     <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -41,53 +42,31 @@ const Dashboard = () => {
         >
          <FaHome></FaHome> ADMIN HOME
         </NavLink></li>
-        <li><NavLink
-          to="/dashboard/add-item"
-          aria-label="Our HomePage"
-          title="Our HomePage"
-          className={({ isActive }) =>
-            isActive
-              ? " border-md rounded-md bg-red-950 text-white"
-              : "font-medium  text-white"
-          }
-        >
-         <FaUtensils></FaUtensils> ADD ITEMS
-        </NavLink></li>
+        
         <li><NavLink
           to="/dashboard/manage-items"
           aria-label="Our HomePage"
           title="Our HomePage"
           className={({ isActive }) =>
             isActive
-              ? " border-md rounded-md bg-red-950 text-white"
-              : "font-medium  text-white"
+              ? " border-md uppercase rounded-md bg-red-950 text-white"
+              : "font-medium uppercase text-white"
           }
         >
-         <FaWallet></FaWallet> MANAGE ITEMS
+         <FaWallet></FaWallet> Manage Classes
         </NavLink></li>
+       
         <li><NavLink
-          to="/dashboard/"
+          to="/dashboard/manage-user"
           aria-label="Our HomePage"
           title="Our HomePage"
           className={({ isActive }) =>
             isActive
-              ? " border-md rounded-md bg-red-950 text-white"
-              : "font-medium  text-white"
+              ? " border-md uppercase rounded-md bg-red-950 text-white"
+              : "font-medium uppercase  text-white"
           }
         >
-         <FaBook></FaBook> MANAGE BOOKINGS
-        </NavLink></li>
-        <li><NavLink
-          to="/dashboard/all-users"
-          aria-label="Our HomePage"
-          title="Our HomePage"
-          className={({ isActive }) =>
-            isActive
-              ? " border-md rounded-md bg-red-950 text-white"
-              : "font-medium  text-white"
-          }
-        >
-         <FaUsers></FaUsers>  ALL USERS
+         <FaUsers></FaUsers>  Manage USERS
         </NavLink></li>
         
           
@@ -159,34 +138,7 @@ const Dashboard = () => {
         >
          <AiOutlineHome></AiOutlineHome> HOME
         </NavLink></li>
-        <li><NavLink
-          to="/classes"
-          aria-label="Our HomePage"
-          title="Our HomePage"
-          className={({ isActive }) =>
-            isActive
-              ? " border-md rounded-md bg-red-950 text-white"
-              : "font-medium  text-white"
-          }
-        >
-         <AiOutlineMenu></AiOutlineMenu> CLASSES
-        </NavLink></li>
-        
-       
       
-        <li><NavLink
-          to="/contact"
-          aria-label="Our HomePage"
-          title="Our HomePage"
-          className={({ isActive }) =>
-            isActive
-              ? " border-md rounded-md bg-red-950 text-white"
-              : "font-medium  text-white"
-          }
-        >
-         <AiOutlineContacts></AiOutlineContacts> CONTACT
-        </NavLink></li>
-       
         
       </ul>
     

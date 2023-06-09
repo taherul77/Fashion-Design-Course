@@ -10,6 +10,7 @@ import MySelected from "../dashboard/MySelected/MySelected";
 import StudentHome from "../dashboard/StudentHome/StudentHome";
 import StudentPayment from "../dashboard/StudentPayment/StudentPayment";
 import StudentEnrolled from "../dashboard/StudentEnrolled/StudentEnrolled";
+import ManageUser from "../dashboard/Admin/ManageUser/ManageUser";
 
 
 
@@ -64,6 +65,10 @@ export const router = createBrowserRouter([
         {
           path:'student-enrolled',
           element:<StudentEnrolled></StudentEnrolled>
+        },
+        {
+          path:'manage-user',
+          element:<ManageUser></ManageUser>
         }
       ]
     }
