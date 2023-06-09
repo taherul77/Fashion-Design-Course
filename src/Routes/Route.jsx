@@ -11,6 +11,7 @@ import StudentHome from "../dashboard/StudentHome/StudentHome";
 import StudentPayment from "../dashboard/StudentPayment/StudentPayment";
 import StudentEnrolled from "../dashboard/StudentEnrolled/StudentEnrolled";
 import ManageUser from "../dashboard/Admin/ManageUser/ManageUser";
+import PrivateRoute from "./PrivateRoute";
 
 
 
@@ -34,7 +35,7 @@ export const router = createBrowserRouter([
         },
         {
           path:"/classes",
-          element:<AllClasses></AllClasses>
+          element:<PrivateRoute><AllClasses></AllClasses></PrivateRoute>
 
         },
         {
@@ -47,7 +48,7 @@ export const router = createBrowserRouter([
     },
     {
       path: "/dashboard",
-      element: <Dashboard></Dashboard>,
+      element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
       children:[
         {
           path:'my-selected',

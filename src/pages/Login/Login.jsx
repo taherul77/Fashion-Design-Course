@@ -58,10 +58,7 @@ const Login = () => {
               .then(res => res.json())
               .then(data => {
                   if (data.insertedId) {
-                    setError("");
-                   
-                    
-                      
+                    setError("");   
                   }
               })
               navigate(from, { replace: true });

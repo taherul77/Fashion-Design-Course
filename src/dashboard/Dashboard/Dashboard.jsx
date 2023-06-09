@@ -3,15 +3,11 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { FaShoppingCart ,FaWallet , FaHome , FaBookmark, FaUsers } from 'react-icons/fa';
 import { AiOutlineHome,} from "react-icons/ai";
-import useAdmin from "../../hooks/isAdmin";
-
-
-
 
 
 const Dashboard = () => {
  
-  const {isAdmin} = useAdmin();
+  const isAdmin =true;
   return (
     <div className="drawer lg:drawer-open">
     <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -23,7 +19,7 @@ const Dashboard = () => {
     </div> 
     <div className="drawer-side">
       <label htmlFor="my-drawer-2" className="drawer-overlay"></label> 
-      <ul className="menu p-4 w-90 text-center text-xl h-[100%] bg-fuchsia-600 text-base-content">
+      <ul className="menu p-4 w-90 text-center text-xl h-[100%] bg-sky-600 text-base-content">
         {/* Sidebar content here */}
 
         <h2 className="text-4xl text-white py-6">FASHION DESIGN</h2>
