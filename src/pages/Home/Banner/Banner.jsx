@@ -2,6 +2,8 @@ import TypewriterAnimation from "../../../components/TypewriterAnimation/Typewri
 import "./banner.css";
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 
+import "aos/dist/aos.css";
+
 const Banner = () => {
   return (
     <section className="">
@@ -17,7 +19,7 @@ const Banner = () => {
           <h2 className="px-3 text-4xl font-bold text-transparent  bg-clip-text bg-gradient-to-r from-blue-500 to-sky-600">
             Online Education from Fashion Industry Leaders
           </h2>
-          <p className="mt-6 px-3 mb-8 text-xl sm:mb-12 text-violet-800">
+          <p  className="mt-6 px-3 mb-8 text-xl sm:mb-12 text-violet-800">
             Discover the business of fashion and the cultural impact of the
             fashion industry with courses from industry leaders.
           </p>

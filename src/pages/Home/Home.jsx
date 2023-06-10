@@ -43,8 +43,8 @@ const Home = () => {
               ))}
             </div>
             <Link to="/classes">
-              <div className="flex items-center pt-10 justify-center">
-                <button className="btn btn-active btn-accent">
+              <div className="flex items-center pt-10 justify-center ">
+                <button className="px-8 py-2 font-bold text-cyan-50 border-md rounded-md bg-pink-400  bg-gradient-to-r from-pink-500 to-sky-300">
                   SEE ALL CLASSES
                 </button>
               </div>
@@ -74,7 +74,7 @@ const Home = () => {
             </div>
             <Link to="/instructors">
               <div className="flex items-center pt-10 justify-center">
-                <button className="btn btn-active btn-accent">
+                <button className="px-8 py-2 font-bold text-cyan-50 border-md rounded-md bg-pink-400  bg-gradient-to-r from-pink-500 to-sky-300">
                   SEE ALL INSTRUCTORS
                 </button>
               </div>

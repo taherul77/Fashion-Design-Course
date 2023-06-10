@@ -12,7 +12,7 @@ const Instructors = ({ img, instructor, email, taken }) => {
           <p>Email : {email}</p>
           <p>Classes taken : {taken}</p>
           <div className="card-actions justify-end">
-            <div className="badge badge-outline">See Classes</div>
+            <div className="px-8 py-2 font-bold text-cyan-50 border-md rounded-md bg-pink-400  bg-gradient-to-r from-pink-500 to-sky-300">See Classes</div>
           </div>
         </div>
       </div>

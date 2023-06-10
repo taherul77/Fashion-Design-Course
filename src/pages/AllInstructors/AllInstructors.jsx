@@ -4,7 +4,8 @@ import Wrapper from "../../components/Wrapper/Wrapper";
 
 import useInstructor from "../../hooks/useInstructor";
 import useTitle from "../../hooks/useTitle";
-import InstructorCart from "./InstructorCart";
+import Instructors from "../Home/Instructors/Instructors";
+
 
 const AllInstructors = () => {
   useTitle("Home");
@@ -30,13 +31,13 @@ const AllInstructors = () => {
             <Loader />
           ) : (
             <>
-              <div className="grid grid-cols-12 lg:grid-cols-3">
+              <div className="grid grid-cols-12 gap-10">
                 {instructor?.map((instructorItem) => (
-                  <InstructorCart
+                  <Instructors
                   key={instructorItem?._id}
                   img={instructorItem?.instructor?.image}
                   instructor={instructorItem?.instructor?.name}
-                  price={instructorItem?.price}
+                  email={instructorItem?.instructor?.email}
                   taken={instructorItem?.instructor?.course_taken}
                   />
                 ))}
