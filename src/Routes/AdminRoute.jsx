@@ -1,11 +1,11 @@
 /* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
 
 import { Navigate, useLocation } from "react-router-dom";
 
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import useAdmin from "../hooks/isAdmin";
-
 
 
 const AdminRoute = ({ children}) => {

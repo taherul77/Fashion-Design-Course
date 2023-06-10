@@ -5,6 +5,7 @@ import { FaShoppingCart ,FaWallet , FaHome , FaBookmark, FaUsers } from 'react-i
 import { AiOutlineHome,} from "react-icons/ai";
 
 
+
 const Dashboard = () => {
  
   const isAdmin =true;
@@ -40,7 +41,7 @@ const Dashboard = () => {
         </NavLink></li>
         
         <li><NavLink
-          to="/dashboard/manage-items"
+          to="/dashboard/manage-classes"
           aria-label="Our HomePage"
           title="Our HomePage"
           className={({ isActive }) =>

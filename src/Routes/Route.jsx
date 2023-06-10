@@ -12,6 +12,8 @@ import StudentPayment from "../dashboard/StudentPayment/StudentPayment";
 import StudentEnrolled from "../dashboard/StudentEnrolled/StudentEnrolled";
 import ManageUser from "../dashboard/Admin/ManageUser/ManageUser";
 import PrivateRoute from "./PrivateRoute";
+import AdminRoute from "./AdminRoute";
+import ManageCourse from "../dashboard/Admin/ManageCourse/ManageCourse";
 
 
 
@@ -69,7 +71,11 @@ export const router = createBrowserRouter([
         },
         {
           path:'manage-user',
-          element:<ManageUser></ManageUser>
+          element:<AdminRoute><ManageUser></ManageUser></AdminRoute>
+        },
+        {
+          path:'manage-classes',
+          element:<AdminRoute><ManageCourse></ManageCourse></AdminRoute>
         }
       ]
     }

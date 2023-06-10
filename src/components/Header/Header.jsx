@@ -10,8 +10,8 @@ import useCart from "../../hooks/useCart";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
-  const {cart} = useCart();
-  console.log(cart?.length);
+  const {course} = useCart();
+  console.log(course?.length);
 
 
   const signOut = () => {
@@ -218,7 +218,7 @@ const navItemRight =(<>
             <label tabIndex={0} className="btn btn-ghost btn-circle">
               <div className="indicator text-2xl">
                 <LuShoppingBag></LuShoppingBag>
-                <span className="badge badge-sm indicator-item">+{cart?.length}</span>
+                <span className="badge badge-sm indicator-item">+{course?.length}</span>
               </div>
             </label>
           </div>
