@@ -40,7 +40,7 @@ const Header = () => {
           title="Our HomePage"
           className={({ isActive }) =>
             isActive
-              ? "  underline decoration-double decoration-green-700 text-white"
+              ? "  underline decoration-double decoration-sky-600 text-white"
               : "font-medium  text-white"
           }
         >

@@ -10,21 +10,13 @@ import Classes from "./Classes/Classes";
 import Instructors from "./Instructors/Instructors";
 import { BASE_URL } from "../../hooks/global";
 
-
 const Home = () => {
   useTitle("Home");
-  const getClasses = useFetch(`${BASE_URL}/course`)
+  const getClasses = useFetch(`${BASE_URL}/course`);
 
   const { data, loading } = getClasses;
 
   const classesItems = data?.slice(0, 6);
-
-  
-
-
-
-  
-
 
   return (
     <div>
@@ -38,7 +30,7 @@ const Home = () => {
           <Loader />
         ) : (
           <>
-            <div className="grid grid-cols-12 lg:grid-cols-3">
+            <div className="grid grid-cols-12 gap-5 gap-y-10 ">
               {classesItems?.map((classesItem) => (
                 <Classes
                   key={classesItem?._id}
@@ -51,7 +43,7 @@ const Home = () => {
               ))}
             </div>
             <Link to="/classes">
-              <div className="flex items-center">
+              <div className="flex items-center pt-10 justify-center">
                 <button className="btn btn-active btn-accent">
                   SEE ALL CLASSES
                 </button>
@@ -69,19 +61,19 @@ const Home = () => {
           <Loader />
         ) : (
           <>
-            <div className="grid grid-cols-12 lg:grid-cols-3">
+            <div className="grid grid-cols-12 gap-5">
               {classesItems?.map((instructorItem) => (
                 <Instructors
                   key={instructorItem?._id}
                   img={instructorItem?.instructor?.image}
                   instructor={instructorItem?.instructor?.name}
-                  price={instructorItem?.price}
+                  email={instructorItem?.instructor?.email}
                   taken={instructorItem?.instructor?.course_taken}
                 />
               ))}
             </div>
             <Link to="/instructors">
-              <div className="flex items-center">
+              <div className="flex items-center pt-10 justify-center">
                 <button className="btn btn-active btn-accent">
                   SEE ALL INSTRUCTORS
                 </button>

@@ -1,36 +1,23 @@
 /* eslint-disable react/prop-types */
 
-
-const Instructors = ({img,instructor,price,taken}) => {
-    return (
-        <div>
-            <div>
-        <div className="max-w-xs overflow-hidden bg-white rounded-lg shadow-lg ">
-          <div className="px-4 py-2">
-            <h1 className="text-xl font-bold uppercase ">{instructor}</h1>
-     
-          </div>
-
-          <img
-            className="object-cover w-full h-50 mt-2"
-            src={img}
-            alt="NIKE AIR"
-          />
-          <p>Class Taken : {taken}</p>
-
-          <div className="flex items-center justify-between px-4 py-2 ">
-            <h1 className="text-lg font-bold ">${price}</h1>
-          
-            <button className="px-2 py-1 text-xs font-semibold uppercase transition-colors duration-300 transform bg-white rounded hover:bg-gray-200 focus:bg-gray-400 focus:outline-none">
-              See Classes
-            </button>
+const Instructors = ({ img, instructor, email, taken }) => {
+  return (
+    <div className=" col-span-12 lg:col-span-4   rounded-lg shadow-lg ">
+      <div className="card w-96 bg-base-100 shadow-xl">
+        <figure>
+          <img src={img} alt="Shoes" />
+        </figure>
+        <div className="card-body">
+          <h2 className="card-title">{instructor}</h2>
+          <p>Email : {email}</p>
+          <p>Classes taken : {taken}</p>
+          <div className="card-actions justify-end">
+            <div className="badge badge-outline">See Classes</div>
           </div>
         </div>
-        
       </div>
-
-        </div>
-    );
+    </div>
+  );
 };
 
 export default Instructors;

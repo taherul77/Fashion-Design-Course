@@ -4,6 +4,13 @@
 import { useContext } from "react";
 import { AuthContext } from "../../../Provider/AuthProvider";
 
+
+import { useRef, useState } from "react";
+
+import './Classes.css'
+
+
+
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { BASE_URL } from "../../../hooks/global";
@@ -12,7 +19,29 @@ import useCart from "../../../hooks/useCart";
 const Classes = ({ img, _id, title, seats, instructor, price }) => {
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
-   const {refetch} = useCart();
+  const { refetch } = useCart();
+
+  const [isHovered, setIsHovered] = useState(false);
+    const delayedIsHovered = useRef(false);
+    const timeoutId = useRef(null);
+
+    console.log(isHovered);
+
+  const handleMouseOver = () => {
+    clearTimeout(timeoutId.current);
+    timeoutId.current = setTimeout(() => {
+        setIsHovered(true);
+        delayedIsHovered.current = true;
+    }, 200);
+};
+
+const handleMouseOut = () => {
+    clearTimeout(timeoutId.current);
+    timeoutId.current = setTimeout(() => {
+        setIsHovered(false);
+        delayedIsHovered.current = false;
+    }, 200);
+};
 
   const handleAddToCart = () => {
     if (user && user.email) {
@@ -64,31 +93,49 @@ const Classes = ({ img, _id, title, seats, instructor, price }) => {
   };
   return (
     <>
-      <div>
-        <div className="max-w-xs overflow-hidden bg-white rounded-lg shadow-lg ">
-          <div className="px-4 py-2">
-            <h1 className="text-xl font-bold uppercase ">{title}</h1>
-            <p className="mt-1 text-sm ">Instructor: {instructor}</p>
-          </div>
+   
+        
 
-          <img
-            className="object-cover w-full h-50 mt-2"
-            src={img}
-            alt="NIKE AIR"
-          />
 
-          <div className="flex items-center justify-between px-4 py-2 ">
-            <h1 className="text-lg font-bold ">${price}</h1>
-            <p>Seats: {seats}</p>
-            <button
-              onClick={() => handleAddToCart()}
-              className="px-2 py-1 text-xs font-semibold uppercase transition-colors duration-300 transform bg-white rounded hover:bg-gray-200 focus:bg-gray-400 focus:outline-none"
+
+        <div className="col-span-12 lg:col-span-4  ">
+            <div
+                onMouseOver={handleMouseOver}
+                onMouseOut={handleMouseOut}
+                className="hover:shadow-md rounded-md cursor-pointer"
             >
-              Add to cart
-            </button>
-          </div>
+                <img
+                    className="border border-b-0 border-gray-200"
+                    src={img}
+                    alt=""
+                />
+                <div className="text-center pt-5 pb-12 space-y-3 border border-gray-200 relative">
+                    <h2 className="text-2xl font-medium">{(title)?.slice(0,28)}...</h2>
+                    <h3 className="text-xl font-medium">Instructor: {instructor}</h3>
+                    <h2 className="text-lg font-medium">${price}</h2>
+                    <h2>Available seats : {seats}</h2>
+                    <div className="button-cart"></div>
+                    <svg onClick={() => handleAddToCart()}
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={1.5}
+                        stroke="currentColor"
+                        className="w-12 h-12 absolute p-4 rounded-full bottom-[-20px] text-white bg-[#9f8a55] left-1/2 transform -translate-x-1/2"
+                    >
+                        <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
+                        />
+                    </svg>
+                </div>
+            </div>
         </div>
-      </div>
+
+
+       
+    
     </>
   );
 };
