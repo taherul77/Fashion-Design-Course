@@ -5,6 +5,7 @@ import Loader from "../../components/Loader/Loader";
 import Wrapper from "../../components/Wrapper/Wrapper";
 
 import Classes from "../Home/Classes/Classes";
+import img from '../../assets/top-banner.gif'
 
 const AllClasses = () => {
   const getClasses = useFetch("http://localhost:5000/course");
@@ -16,10 +17,10 @@ const AllClasses = () => {
   return (
     <div>
       <TopBanner
-        img="https://i.ibb.co/TcKpk1X/pngtree-fashion-blue-banner-banners-design-vector-material-picture-image-1185823.png"
+        img={img}
         title={"OUR CLASSES"}
       />
-      <Wrapper>
+      <Wrapper className='py-20'>
         {loading ? (
           <Loader />
         ) : (

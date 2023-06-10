@@ -16,10 +16,10 @@ const Banner = () => {
             text=" UNIQUE FASHION DESIGN COURSE"
             className="inline-block px-3 py-px mb-4 text-2xl font-bold  text-transparent  bg-clip-text bg-gradient-to-r from-pink-500 to-sky-600"
           />
-          <h2 className="px-3 text-4xl font-bold text-transparent  bg-clip-text bg-gradient-to-r from-blue-500 to-sky-600">
+          <h2 className="px-3 text-5xl font-black text-transparent  bg-clip-text bg-gradient-to-r from-blue-500 to-sky-600">
             Online Education from Fashion Industry Leaders
           </h2>
-          <p  className="mt-6 px-3 mb-8 text-xl sm:mb-12 text-violet-800">
+          <p  className="mt-6 px-3 mb-8 text-2xl sm:mb-12 text-violet-800">
             Discover the business of fashion and the cultural impact of the
             fashion industry with courses from industry leaders.
           </p>

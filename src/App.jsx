@@ -10,7 +10,7 @@ function App() {
 
   return (
     <>
-       <div className="bg-white">
+       <div className="bg-sky-200 bg-opacity-40">
    { onHeaderFooter ||  <Header></Header>}
    
     <Outlet></Outlet>

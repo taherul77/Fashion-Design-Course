@@ -5,16 +5,13 @@ import { AuthContext } from "../../Provider/AuthProvider";
 
 import { CgProfile } from "react-icons/cg";
 import { LuShoppingBag } from "react-icons/lu";
-import useFetch from "../../hooks/useFetch";
-import { BASE_URL } from "../../hooks/global";
+import useCart from "../../hooks/useCart";
+
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
-  const cart = useFetch(`${BASE_URL}/course-cart?email=${user?.email}`)
-
-  const { data } = cart;
-
-  const cartItems = data;
+  const {cart} = useCart();
+  console.log(cart?.length);
 
 
   const signOut = () => {
@@ -96,7 +93,7 @@ const navItemRight =(<>
       </li>
 </>)
   return (
-    <div className="navbar fixed z-10 bg-opacity-30   text-white bg-black">
+    <div className="navbar fixed z-10 bg-opacity-30 h-20  text-white bg-sky-300">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -221,7 +218,7 @@ const navItemRight =(<>
             <label tabIndex={0} className="btn btn-ghost btn-circle">
               <div className="indicator text-2xl">
                 <LuShoppingBag></LuShoppingBag>
-                <span className="badge badge-sm indicator-item">+{cartItems?.length}</span>
+                <span className="badge badge-sm indicator-item">+{cart?.length}</span>
               </div>
             </label>
           </div>

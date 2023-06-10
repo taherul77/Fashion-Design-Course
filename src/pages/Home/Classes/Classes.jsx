@@ -98,14 +98,14 @@ const handleMouseOut = () => {
 
 
 
-        <div className="col-span-12 lg:col-span-4  ">
+        <div className="col-span-12 lg:col-span-4 bg-white ">
             <div
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
                 className="hover:shadow-md rounded-md cursor-pointer"
             >
                 <img
-                    className="border border-b-0 border-gray-200"
+                    className="border border-b-0 border-gray-400"
                     src={img}
                     alt=""
                 />
@@ -121,7 +121,7 @@ const handleMouseOut = () => {
                         viewBox="0 0 24 24"
                         strokeWidth={1.5}
                         stroke="currentColor"
-                        className="w-12 h-12 absolute p-4 rounded-full bottom-[-20px] text-white bg-[#9f8a55] left-1/2 transform -translate-x-1/2"
+                        className="w-12 h-12 absolute p-4 rounded-full bottom-[-20px] text-white bg-[#60cdd3] left-1/2 transform -translate-x-1/2"
                     >
                         <path
                             strokeLinecap="round"

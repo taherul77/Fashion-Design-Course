@@ -9,6 +9,7 @@ import Classes from "./Classes/Classes";
 
 import Instructors from "./Instructors/Instructors";
 import { BASE_URL } from "../../hooks/global";
+import Featured from "./Featured/Featured";
 
 const Home = () => {
   useTitle("Home");
@@ -82,6 +83,7 @@ const Home = () => {
           </>
         )}
       </Wrapper>
+      <Featured></Featured>
     </div>
   );
 };

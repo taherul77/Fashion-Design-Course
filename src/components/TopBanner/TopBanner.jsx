@@ -1,4 +1,4 @@
-import Wrapper from "../Wrapper/Wrapper";
+
 
 /* eslint-disable react/prop-types */
 const TopBanner = ({ img, title }) => {
@@ -11,17 +11,13 @@ const TopBanner = ({ img, title }) => {
       >
         <div className="">
           <div className="text-center py-8 md:py-22 lg:py-32">
-            <h3 className="uppercase font-semibold text-3xl md:text-6xl mb-3 md:mb-7">
+            <h3 className="uppercase font-semibold text-3xl text-white md:text-6xl mb-3 md:mb-7">
               {title}
             </h3>
           </div>
         </div>
       </div>
-      <div>
-        <Wrapper>
-
-        </Wrapper>
-      </div>
+      
     </>
   );
 };

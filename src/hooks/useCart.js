@@ -1,24 +1,26 @@
-import { useQuery } from "@tanstack/react-query";
-import { BASE_URL } from "./global";
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
+import useAxiosSecure from "./useAxiosSecure";
+import { useQuery } from "@tanstack/react-query";
 
 
 const useCart = () => {
-    const {user} = useContext(AuthContext);
-    const { refetch, data:course } = useQuery ({
-        queryKey: ['course',],
-        queryFn: async () => {
-          const response = await fetch(`${BASE_URL}/course-cart?email=${user?.email}`)
-          if (!response.ok) {
-            throw new Error('Network response was not ok')
-          }
-          return response.json()
+    const { user ,loading } = useContext(AuthContext);
+    const [axiosSecure] = useAxiosSecure();
+
+    const { refetch,  data: cart} = useQuery({
+        queryKey: ['cart', user?.email],
+        enabled: !loading && !!user?.email && !!localStorage.getItem('access-token'),
+        queryFn: async ()=>{
+            const res = await axiosSecure.get(`/course-cart?email=${user?.email}`
+            )
+            return res.data;
+            
         },
+        
       })
-
-
-    return {course,refetch}
+     
+   return {cart, refetch}
 };
 
 export default useCart;

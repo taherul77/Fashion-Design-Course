@@ -11,6 +11,7 @@ import {
   signOut,
   updateProfile,
 } from "firebase/auth";
+import axios from "axios";
 
 export const AuthContext = createContext(null);
 const auth = getAuth(app);
@@ -34,10 +35,7 @@ const AuthProvider = ({ children }) => {
     setLoader(true);
     return signInWithPopup(auth, providerGoogle);
   };
-  const logInWithGithub = (providerGithub) => {
-    setLoader(true);
-    return signInWithPopup(auth, providerGithub);
-  };
+
   const logOut = () => {
     setLoader(true);
     return signOut(auth);
@@ -46,7 +44,17 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
-      setLoader(false);
+      if (currentUser) {
+        axios.post("http://localhost:5000/jwt", { email: currentUser.email })
+          .then((data) => {
+           
+            localStorage.setItem("access-token", data.data.token);
+            setLoader(false);
+          });
+      } else {
+        localStorage.removeItem("access-token");
+        setLoader(false);
+      }
     });
     return () => unsubscribe();
   }, []);
@@ -59,7 +67,7 @@ const AuthProvider = ({ children }) => {
     signIn,
     profileUpdate,
     logInWithGoogle,
-    logInWithGithub,
+   
     logOut,
   };
 
