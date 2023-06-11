@@ -91,7 +91,7 @@ const handlePay = (data) => {
           <div className="lg:flex lg:gap-x-4">
             <table className="table">
               
-              <thead>
+              <thead className="bg-sky-500 rounded-lg">
                 <tr>
                   <th></th>
                   <th>Name</th>

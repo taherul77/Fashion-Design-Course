@@ -1,4 +1,4 @@
-import { Link, NavLink, Outlet } from "react-router-dom";
+import {  NavLink, Outlet } from "react-router-dom";
 import {
   FaShoppingCart,
   FaWallet,
@@ -46,8 +46,8 @@ const Dashboard = () => {
                   title="Our HomePage"
                   className={({ isActive }) =>
                     isActive
-                      ? " border-md rounded-md bg-red-950 text-white"
-                      : "font-medium  text-white"
+                    ? " border-md uppercase rounded-md bg-white text-black"
+                    : "font-medium uppercase text-white"
                   }
                 >
                   <FaHome></FaHome> ADMIN HOME
@@ -61,8 +61,8 @@ const Dashboard = () => {
                   title="Our HomePage"
                   className={({ isActive }) =>
                     isActive
-                      ? " border-md uppercase rounded-md bg-red-950 text-white"
-                      : "font-medium uppercase text-white"
+                    ? " border-md uppercase rounded-md bg-white text-black"
+                    : "font-medium uppercase text-white"
                   }
                 >
                   <FaWallet></FaWallet> Manage Classes
@@ -76,8 +76,8 @@ const Dashboard = () => {
                   title="Our HomePage"
                   className={({ isActive }) =>
                     isActive
-                      ? " border-md uppercase rounded-md bg-red-950 text-white"
-                      : "font-medium uppercase  text-white"
+                    ? " border-md uppercase rounded-md bg-white text-black"
+                    : "font-medium uppercase text-white"
                   }
                 >
                   <FaUsers></FaUsers> Manage USERS
@@ -95,8 +95,8 @@ const Dashboard = () => {
                   title="Our HomePage"
                   className={({ isActive }) =>
                     isActive
-                      ? " border-md uppercase rounded-md bg-red-950 text-white"
-                      : "font-medium uppercase text-white"
+                    ? " border-md uppercase rounded-md bg-white text-black"
+                    : "font-medium uppercase text-white"
                   }
                 >
                   <FaHome></FaHome> MY HOME Page
@@ -105,13 +105,13 @@ const Dashboard = () => {
 
               <li>
                 <NavLink
-                  to="/dashboard/student-payment"
+                  to="/dashboard/payment-history"
                   aria-label="Our HomePage"
                   title="Our HomePage"
                   className={({ isActive }) =>
                     isActive
-                      ? " border-md uppercase rounded-md bg-red-950 text-white"
-                      : "font-medium uppercase text-white"
+                    ? " border-md uppercase rounded-md bg-white text-black"
+                    : "font-medium uppercase text-white"
                   }
                 >
                   <FaWallet></FaWallet>MY PAYMENT HISTORY
@@ -124,12 +124,12 @@ const Dashboard = () => {
                   title="Our HomePage"
                   className={({ isActive }) =>
                     isActive
-                      ? " border-md uppercase rounded-md bg-red-950 text-white"
+                      ? " border-md uppercase rounded-md bg-white text-black"
                       : "font-medium uppercase text-white"
                   }
                 >
                   <FaShoppingCart></FaShoppingCart> My Selected Classes{" "}
-                  <span>+</span>
+                  
                 </NavLink>
               </li>
 
@@ -140,8 +140,8 @@ const Dashboard = () => {
                   title="Our HomePage"
                   className={({ isActive }) =>
                     isActive
-                      ? " border-md uppercase rounded-md bg-red-950 text-white"
-                      : "font-medium uppercase  text-white"
+                    ? " border-md uppercase rounded-md bg-white text-black"
+                    : "font-medium uppercase text-white"
                   }
                 >
                   <FaBookmark></FaBookmark>My Enrolled Classes
@@ -154,12 +154,36 @@ const Dashboard = () => {
 {
   isInstructor &&(
     <>
-                <li className="text-primary rounded-md bg-white">
-                  <Link to="/dashboard/add-product">Add Product</Link>
-                </li>
-                <li className="text-primary rounded-md bg-white">
-                  <Link to="/dashboard/my-product">My Product</Link>
-                </li>
+    <li>
+                <NavLink
+                  to="/dashboard/add-Class"
+                  aria-label="Our HomePage"
+                  title="Our HomePage"
+                  className={({ isActive }) =>
+                    isActive
+                    ? " border-md uppercase rounded-md bg-white text-black"
+                    : "font-medium uppercase text-white"
+                  }
+                >
+                  <FaBookmark></FaBookmark>Add Class
+                </NavLink>
+              </li>
+    <li>
+                <NavLink
+                  to="/dashboard/my-product"
+                  aria-label="Our HomePage"
+                  title="Our HomePage"
+                  className={({ isActive }) =>
+                    isActive
+                    ? " border-md uppercase rounded-md bg-white text-black"
+                    : "font-medium uppercase text-white"
+                  }
+                >
+                  <FaBookmark></FaBookmark>MY Product
+                </NavLink>
+              </li>
+                
+
               </>
   )
 }

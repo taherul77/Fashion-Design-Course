@@ -9,7 +9,7 @@ const useAdmin = (email) => {
       fetch(`${BASE_URL}/users/${email}`)
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
+          
 
           if (data?.role === "admin") {
             setIsAdmin(true);

@@ -15,6 +15,9 @@ import PrivateRoute from "./PrivateRoute";
 
 import ManageCourse from "../dashboard/Admin/ManageCourse/ManageCourse";
 import Fail from "../components/Fail/Fail";
+import AddClasses from "../dashboard/Instructor/AddClasses";
+import Payment from "../dashboard/Payment/Payment";
+import Contact from "../pages/Contuct/Contact";
 
 
 
@@ -47,12 +50,17 @@ export const router = createBrowserRouter([
           element:<StudentPayment></StudentPayment>
         },
         {
-          path:'/fail/:tranId',
+          path:'/payment/fail/:tranId',
           element:<Fail></Fail>
         },
         {
           path:"/instructors",
           element:<AllInstructors></AllInstructors>
+
+        },
+        {
+          path:"/contact",
+          element:<Contact></Contact>
 
         }
        
@@ -75,6 +83,10 @@ export const router = createBrowserRouter([
           element:<StudentEnrolled></StudentEnrolled>
         },
         {
+          path:'payment-history',
+          element:<Payment></Payment>
+        },
+        {
           path:'manage-user',
           element:<ManageUser></ManageUser>
         },
@@ -82,6 +94,10 @@ export const router = createBrowserRouter([
           path:'manage-classes',
           element:<ManageCourse></ManageCourse>
         },
+        {
+          path:'add-Class',
+          element: <AddClasses></AddClasses>
+        }
        
       ]
     }

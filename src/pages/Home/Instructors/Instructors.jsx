@@ -1,12 +1,17 @@
 /* eslint-disable react/prop-types */
-
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 const Instructors = ({ img, instructor, email, taken }) => {
+  useEffect(() => {
+    AOS.init();
+}, []);
   return (
     <div className=" col-span-12 lg:col-span-4 rounded-lg shadow-lg ">
       <div className="card w-auto bg-base-100 shadow-xl">
-        <figure>
-          <img src={img} alt="Instructor" />
-        </figure>
+      <div data-aos="zoom-in"> <figure>
+          <img className="rounded-md" src={img} alt="Instructor" />
+        </figure></div>
         <div className="card-body">
           <h2 className="card-title">{instructor}</h2>
           <p>Email : {email}</p>

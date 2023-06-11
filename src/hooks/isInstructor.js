@@ -9,7 +9,7 @@ const useInstructorDashboard = (email) => {
       fetch(`${BASE_URL}/users/${email}`)
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
+         
 
           if (data?.role === "instructor") {
             setIsInstructor(true);

@@ -11,9 +11,7 @@ import useCart from "../../hooks/useCart";
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
   const {course} = useCart();
-  console.log(course?.length);
-
-
+  
   const signOut = () => {
     logOut()
       .then(() => {

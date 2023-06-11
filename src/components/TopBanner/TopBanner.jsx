@@ -1,8 +1,12 @@
-
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 /* eslint-disable react/prop-types */
 const TopBanner = ({ img, title }) => {
-    
+  useEffect(() => {
+    AOS.init();
+}, []);
   return (
     <>
       <div
@@ -11,9 +15,9 @@ const TopBanner = ({ img, title }) => {
       >
         <div className="">
           <div className="text-center py-8 md:py-22 lg:py-32">
-            <h3 className="uppercase font-semibold text-3xl text-white md:text-6xl mb-3 md:mb-7">
+          <div data-aos="fade-up-left"> <h3 className="uppercase font-semibold text-3xl text-white md:text-6xl mb-3 md:mb-7">
               {title}
-            </h3>
+            </h3></div>
           </div>
         </div>
       </div>

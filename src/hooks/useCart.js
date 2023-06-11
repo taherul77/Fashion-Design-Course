@@ -19,7 +19,7 @@ const useCart = () => {
         },
         
       })
-     console.log(course);
+     
    return {course, refetch}
    
 };
