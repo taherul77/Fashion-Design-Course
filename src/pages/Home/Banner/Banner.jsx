@@ -14,7 +14,7 @@ const Banner = () => {
           </p> */}
           <TypewriterAnimation
             text=" UNIQUE FASHION DESIGN COURSE"
-            className="inline-block px-3 py-px mb-4 text-2xl font-bold  text-transparent  bg-clip-text bg-gradient-to-r from-pink-500 to-sky-600"
+            className="inline-block px-3 py-px mb-4 text-xl font-bold  text-transparent  bg-clip-text bg-gradient-to-r from-pink-500 to-sky-600"
           />
           <h2 className="px-3 text-3xl uppercase font-black text-transparent  bg-clip-text bg-gradient-to-r from-blue-500 to-sky-600">
             Online Education from Fashion Industry Leaders

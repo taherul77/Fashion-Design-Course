@@ -2,10 +2,10 @@
 
 const Instructors = ({ img, instructor, email, taken }) => {
   return (
-    <div className=" col-span-12 lg:col-span-4   rounded-lg shadow-lg ">
-      <div className="card w-96 bg-base-100 shadow-xl">
+    <div className=" col-span-12 lg:col-span-4 rounded-lg shadow-lg ">
+      <div className="card w-auto bg-base-100 shadow-xl">
         <figure>
-          <img src={img} alt="Shoes" />
+          <img src={img} alt="Instructor" />
         </figure>
         <div className="card-body">
           <h2 className="card-title">{instructor}</h2>

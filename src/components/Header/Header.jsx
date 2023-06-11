@@ -59,10 +59,7 @@ const Header = () => {
         </NavLink>
       </li>
 
-     
-    </>
-  );
-const navItemRight =(<>
+      
  <li>
         <NavLink
           to="/instructors"
@@ -91,7 +88,11 @@ const navItemRight =(<>
           CONTACT US
         </NavLink>
       </li>
-</>)
+
+     
+    </>
+  );
+
   return (
     <div className="navbar fixed z-10 bg-opacity-30 h-20  text-white bg-sky-300">
       <div className="navbar-start">
@@ -117,7 +118,7 @@ const navItemRight =(<>
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-black rounded-box w-52"
           >
             {navItem}
-            {navItemRight}
+            
             {
                 user?.uid ? (< >
                   <li>
@@ -148,15 +149,16 @@ const navItemRight =(<>
           
           </ul>
         </div>
-        
-      </div>
-      <div className="navbar-center hidden lg:flex lg:gap-10">
-        <ul className=" text-xl menu-horizontal lg:gap-8 px-1">{navItem}</ul>
-        
         <Link to="/">
         <h2 className="uppercase text-3xl">Fashion Design</h2>
         </Link>
-        <ul className=" text-xl menu-horizontal lg:gap-8 px-1">{navItemRight}</ul>
+      </div>
+      <div className="navbar-center hidden lg:flex lg:gap-10">
+        
+        
+        
+        <ul className=" text-xl menu-horizontal lg:gap-8 px-1">{navItem}</ul>
+      
       </div>
       <div className="navbar-end gap-4">
        

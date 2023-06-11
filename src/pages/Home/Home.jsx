@@ -24,8 +24,8 @@ const Home = () => {
       <Banner></Banner>
       <Wrapper>
         <SectionTitle
-          SubHeading={"MOST LOVED"}
-          heading={"Classes"}
+          SubHeading={"MOST POPULAR"}
+          heading={"CLASSES"}
         ></SectionTitle>
         {loading ? (
           <Loader />
@@ -56,7 +56,7 @@ const Home = () => {
       <Wrapper>
         <SectionTitle
           SubHeading={"MOST LOVED"}
-          heading={"Instructors"}
+          heading={"INSTRUCTORS"}
         ></SectionTitle>
         {loading ? (
           <Loader />

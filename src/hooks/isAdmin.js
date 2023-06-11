@@ -1,21 +1,26 @@
-import { useQuery } from "@tanstack/react-query";
+import { useEffect, useState } from "react";
+import { BASE_URL } from "./global";
 
-import useAxiosSecure from "./useAxiosSecure";
-import { AuthContext } from "../Provider/AuthProvider";
-import { useContext } from "react";
+const useAdmin = (email) => {
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [isAdminLoading, setIsAdminLoading] = useState(true);
+  useEffect(() => {
+    if (email) {
+      fetch(`${BASE_URL}/users/${email}`)
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
 
-const useAdmin = () => {
-    const {user} = useContext(AuthContext);
-    const [axiosSecure] = useAxiosSecure();
-    
-    const {data: isAdmin, isLoading: isAdminLoading} = useQuery({
-        queryKey: ['isAdmin', user?.email],
-        queryFn: async () => {
-            const res = await axiosSecure.get(`/users/admin/${user?.email}`);
-            
-            return res.data.admin;
-        }
-    })
-    return [isAdmin, isAdminLoading]
-}
+          if (data?.role === "admin") {
+            setIsAdmin(true);
+            setIsAdminLoading(false);
+          }
+
+          return;
+        });
+    }
+  }, [email]);
+  return [isAdmin, isAdminLoading];
+};
+
 export default useAdmin;

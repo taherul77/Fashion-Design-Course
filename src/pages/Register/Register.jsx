@@ -39,7 +39,7 @@ const Register = () => {
                 .then(() => {
                     const saveUser = { displayName: data.name,
                       email: data.email,
-                      photoURL: data.photo, }
+                      photoURL: data.photo,role: "student"  }
                       fetch('http://localhost:5000/users', {
                         method: 'POST',
                         headers: {
