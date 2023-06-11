@@ -18,6 +18,7 @@ import ManageCourse from "../dashboard/Admin/ManageCourse/ManageCourse";
 
 
 
+
 export const router = createBrowserRouter([
     {
       path: "/",
@@ -41,6 +42,10 @@ export const router = createBrowserRouter([
 
         },
         {
+          path:'payment/success/:tranId',
+          element:<StudentPayment></StudentPayment>
+        },
+        {
           path:"/instructors",
           element:<AllInstructors></AllInstructors>
 
@@ -60,10 +65,8 @@ export const router = createBrowserRouter([
           path:'student-home',
           element:<StudentHome></StudentHome>
         },
-        {
-          path:'student-payment',
-          element:<StudentPayment></StudentPayment>
-        },
+        
+       
      
         {
           path:'student-enrolled',
@@ -76,7 +79,8 @@ export const router = createBrowserRouter([
         {
           path:'manage-classes',
           element:<AdminRoute><ManageCourse></ManageCourse></AdminRoute>
-        }
+        },
+       
       ]
     }
 

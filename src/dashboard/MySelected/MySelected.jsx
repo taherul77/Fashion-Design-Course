@@ -1,15 +1,35 @@
 
-import { AiOutlineArrowLeft, AiOutlineDelete } from "react-icons/ai";
+import {  AiOutlineDelete } from "react-icons/ai";
 import useCart from "../../hooks/useCart";
 import { Link } from "react-router-dom";
 import Wrapper from "../../components/Wrapper/Wrapper";
 import Swal from "sweetalert2";
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const MySelected = () => {
+  const {user} = useContext(AuthContext)
+  const {displayName, email} = user
   const { course, refetch } = useCart();
-  console.log(course);
-  const total = course?.reduce((sum, item) => item.price + sum, 0);
+  // console.log(course);
+  
+const handlePay = (data) => {
+  data.customerName = displayName,
+  data.customerEmail = email
+  console.log(data);
 
+  fetch("http://localhost:5000/order",{
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data)
+  }).then(res => res.json())
+  .then(data=> {
+    console.log(data);
+    window.location.replace(data.url)
+  })
+}
   
   const handleDelete = (id) =>{
     
@@ -103,8 +123,12 @@ const MySelected = () => {
                       </div>
                     </td>
                     <td>Zemlak, Daniel and Leannon</td>
-                    <td>Purple</td>
+                    <td>{course.price}</td>
                     <th>
+
+                      <button onClick={() => handlePay(course)}  className="btn btn-ghost text-2xl btn-xs">
+                       Pay
+                      </button>
                       <button onClick={()=>handleDelete(course?._id)} className="btn btn-ghost text-2xl btn-xs">
                         <AiOutlineDelete></AiOutlineDelete>
                       </button>
@@ -113,39 +137,7 @@ const MySelected = () => {
                 ))}
               </tbody>
             </table>
-            <div className="lg:w-4/12 w-full bg-[#F3F3F3] sticky top-20">
-              <div className="flex flex-col p-10 lg:pt-20 justify-between ">
-                <div className="font-semibold">
-                  <p className="text-2xl md:text-3xl font-black text-center text-neutral">
-                    Order Summary
-                  </p>
-                  
-                </div>
-
-                <div className="mt-10 md:mt-14 lg:mt-0">
-                  
-                  <div className="flex items-center pb-6 justify-between ">
-                    <p className="text-2xl leading-normal text-neutral">
-                      Total
-                    </p>
-                    <p className="text-2xl font-bold leading-normal text-right text-neutral">
-                      {total}
-                    </p>
-                  </div>
-
-                  <button className={"w-full rounded-sm bg-neutral md:text-xl"}>
-                    PROCEED TO CHECKOUT
-                  </button>
-                  <Link
-                    to={"/shop"}
-                    className="flex items-center gap-2 mt-5 cursor-pointer"
-                  >
-                    <AiOutlineArrowLeft className="text-xl mt-1" />
-                    <p className="md:text-xl text-neutral">Back to shop</p>
-                  </Link>
-                </div>
-              </div>
-            </div>
+            
           </div>
         )}
         
