@@ -10,6 +10,7 @@ import Classes from "./Classes/Classes";
 import Instructors from "./Instructors/Instructors";
 import { BASE_URL } from "../../hooks/global";
 import Featured from "./Featured/Featured";
+import Contact from "./Contact/Contact";
 
 const Home = () => {
   useTitle("Home");
@@ -85,6 +86,11 @@ const Home = () => {
         )}
       </Wrapper>
       <Featured></Featured>
+      <Wrapper>
+      <div className="py-6">
+      <Contact></Contact>
+      </div>
+      </Wrapper>
     </div>
   );
 };
