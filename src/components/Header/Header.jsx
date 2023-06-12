@@ -206,7 +206,7 @@ const Header = () => {
               </label>
               <ul
                 tabIndex={0}
-                className="menu menu-compact dropdown-content p-2 shadow  border rounded-md w-52"
+                className="menu menu-compact dropdown-content p-2 shadow bg-sky-600  border rounded-md w-52"
               >
                 <li>
                   <Link>{user?.displayName}</Link>
