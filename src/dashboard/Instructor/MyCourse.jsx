@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { BASE_URL } from "../../hooks/global";
 import useFetch from "../../hooks/useFetch";
 import { AuthContext } from "../../Provider/AuthProvider";
+import { AiOutlineCreditCard } from "react-icons/ai";
 
 const MyCourse = () => {
   const { user } = useContext(AuthContext);
@@ -78,6 +79,14 @@ const MyCourse = () => {
                           <span>PRICE</span>
                         </button>
                       </th>
+                      <th
+                        scope="col"
+                        className="px-4 py-3.5 text-sm font-normal text-center  "
+                      >
+                        <button className="flex items-center gap-x-2">
+                          <span>ENROLLED</span>
+                        </button>
+                      </th>
 
                       <th
                         scope="col"
@@ -85,6 +94,14 @@ const MyCourse = () => {
                       >
                         <button className="flex items-center gap-x-2">
                           <span>Status</span>
+                        </button>
+                      </th>
+                      <th
+                        scope="col"
+                        className="px-4 py-3.5 text-sm font-normal text-center  "
+                      >
+                        <button className="flex items-center gap-x-2">
+                          <span>Feedback</span>
                         </button>
                       </th>
 
@@ -126,6 +143,12 @@ const MyCourse = () => {
                         <td className="px-4 py-4 text-sm text-start whitespace-nowrap">
                           {item.price}
                         </td>
+                        <td className="px-4 py-4 text-sm text-start whitespace-nowrap">
+                          {item.totalEnroll}
+                        </td>
+                        <td className="px-4 py-4 text-sm text-start whitespace-nowrap">
+                          {item.feedback}
+                        </td>
 
                         <td className="px-4 py-4 text-sm text-start whitespace-nowrap">
                           {item.status === "approve" ? (
@@ -144,6 +167,11 @@ const MyCourse = () => {
                             </>
                           )}
                         </td>
+                        <th>
+                          <button className="btn btn-ghost text-2xl btn-xs">
+                            <AiOutlineCreditCard></AiOutlineCreditCard>
+                          </button>
+                        </th>
                       </tr>
                     ))}
                   </tbody>
