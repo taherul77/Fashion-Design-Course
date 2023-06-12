@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 
-import { CgProfile } from "react-icons/cg";
+
 import { LuShoppingBag } from "react-icons/lu";
 import useCart from "../../hooks/useCart";
 import logo from '../../assets/logo.png'
@@ -152,7 +152,7 @@ const Header = () => {
         {user?.uid ? (
           
             <NavLink
-              to="/dashboard"
+              to="/dashboard/dashboard-home"
               aria-label="Our HomePage"
               title="Our HomePage"
               className={({ isActive }) =>
@@ -193,7 +193,7 @@ const Header = () => {
                   <Link>{user?.displayName}</Link>
                 </li>
                 <li>
-                  <Link to="/dashboard">Dashboard</Link>
+                  <Link to="/dashboard/dashboard-home">Dashboard</Link>
                 </li>
                 <li>
                   <Link>Profile</Link>
@@ -210,11 +210,11 @@ const Header = () => {
               <li>
                 <Link
                   to="/login"
-                  className="px-6 py-2 font-bold text-white border-md text-2xl rounded-md "
+                  className="px-8 py-2 uppercase font-bold text-cyan-50 border-md rounded-md bg-pink-400  bg-gradient-to-r from-sky-500 to-pink-300"
                   aria-label="login"
                   title="login"
                 >
-                  <CgProfile></CgProfile>
+                  Login
                 </Link>
               </li>
             </ul>

@@ -11,6 +11,7 @@ const MySelected = () => {
   const {user} = useContext(AuthContext)
   const {displayName, email} = user
   const { course, refetch } = useCart();
+  console.log(course);
   // console.log(course);
   
 const handlePay = (data) => {
@@ -18,17 +19,17 @@ const handlePay = (data) => {
   data.customerEmail = email
   console.log(data);
 
-  fetch("http://localhost:5000/order",{
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data)
-  }).then(res => res.json())
-  .then(data=> {
-    console.log(data);
-    window.location.replace(data.url)
-  })
+  // fetch("http://localhost:5000/order",{
+  //   method: "POST",
+  //   headers: {
+  //     "Content-Type": "application/json",
+  //   },
+  //   body: JSON.stringify(data)
+  // }).then(res => res.json())
+  // .then(data=> {
+  //   console.log(data);
+  //   window.location.replace(data.url)
+  // })
 }
   
   const handleDelete = (id) =>{

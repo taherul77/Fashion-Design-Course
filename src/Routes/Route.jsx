@@ -21,6 +21,7 @@ import Contact from "../pages/Contuct/Contact";
 import Error from "../pages/Error/Error";
 import MyCourse from "../dashboard/Instructor/MyCourse";
 import AdminRoute from "./AdminRoute";
+import DashBoardHome from "../dashboard/DashboardHome/DashBoardHome";
 
 
 
@@ -106,6 +107,10 @@ export const router = createBrowserRouter([
         {
           path:'get-my-course',
           element: <MyCourse></MyCourse>
+        },
+        {
+          path:'dashboard-home',
+          element: <DashBoardHome></DashBoardHome>
         }
        
       ]

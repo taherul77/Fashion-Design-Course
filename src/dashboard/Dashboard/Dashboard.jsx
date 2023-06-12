@@ -39,7 +39,7 @@ const Dashboard = () => {
             <>
               <li>
                 <NavLink
-                  to="/dashboard/home"
+                  to="/dashboard/dashboard-home"
                   aria-label="Our HomePage"
                   title="Our HomePage"
                   className={({ isActive }) =>
@@ -87,7 +87,7 @@ const Dashboard = () => {
             <>
               <li>
                 <NavLink
-                  to="/dashboard/student-home"
+                  to="/dashboard/dashboard-home"
                   aria-label="Our HomePage"
                   title="Our HomePage"
                   className={({ isActive }) =>

@@ -10,9 +10,7 @@ const img_hosting_token = import.meta.env.VITE_Image_Upload_token;
 
 const AddClasses = () => {
   const { user } = useContext(AuthContext);
-  console.log("====================================");
-  console.log(user);
-  console.log("====================================");
+ 
   const [axiosSecure] = useAxiosSecure();
   const { register, handleSubmit, reset } = useForm();
   const img_hosting_url = `https://api.imgbb.com/1/upload?key=${img_hosting_token}`;
@@ -53,7 +51,7 @@ const AddClasses = () => {
             if (data.data.insertedId) {
               reset();
               Swal.fire({
-                position: "top-end",
+                position: "center",
                 icon: "success",
                 title: "Course added successfully",
                 showConfirmButton: false,
@@ -74,6 +72,33 @@ const AddClasses = () => {
         ></SectionTitle>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="form-control w-full max-auto">
+
+          <div className="form-control">
+              <label className="label">
+                <span className="label-text">Instructor name*</span>
+              </label>
+              <input
+                readOnly
+                type="text"
+                placeholder="Instructor name"
+                defaultValue={user?.displayName}
+                {...register("name", { required: false, maxLength: 20 })}
+                className="input input-bordered w-full "
+              />
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Instructor Email*</span>
+              </label>
+              <input
+                readOnly
+                type="Email"
+                placeholder="Instructor Email"
+                defaultValue={user?.email}
+                {...register("email", { required: false, maxLength: 20 })}
+                className="input input-bordered w-full "
+              />
+            </div>
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Course Name*</span>
@@ -110,32 +135,7 @@ const AddClasses = () => {
                 className="input input-bordered w-full "
               />
             </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Instructor name*</span>
-              </label>
-              <input
-                readOnly
-                type="text"
-                placeholder="Instructor name"
-                defaultValue={user?.displayName}
-                {...register("name", { required: false, maxLength: 20 })}
-                className="input input-bordered w-full "
-              />
-            </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Instructor Email*</span>
-              </label>
-              <input
-                readOnly
-                type="Email"
-                placeholder="Instructor Email"
-                defaultValue={user?.email}
-                {...register("name", { required: false, maxLength: 20 })}
-                className="input input-bordered w-full "
-              />
-            </div>
+            
 
             <div className="form-control">
               <label className="label">
