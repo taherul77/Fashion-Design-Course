@@ -8,10 +8,11 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { GoogleAuthProvider, } from "firebase/auth";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { FcGoogle } from "react-icons/fc";
+import useTitle from "../../hooks/useTitle";
 
 
 const Login = () => {
-
+  useTitle("Login");
  const [open, setOpen] = useState({
         password: false,
     });
@@ -51,7 +52,7 @@ const Login = () => {
             const saveUser = { displayName: user.displayName,
               email: user.email,
               photoURL: user.photoURL,role: "student" }
-            fetch('http://localhost:5000/users', {
+            fetch('https://summer-camp-server-mauve.vercel.app/users', {
               method: 'POST',
               headers: {
                   'content-type': 'application/json'

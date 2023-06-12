@@ -9,7 +9,7 @@ import img from '../../assets/top-banner.gif'
 
 
 const AllInstructors = () => {
-  useTitle("Home");
+  useTitle("Instructor");
 
   const {course:instructor ,isLoading} = useInstructor();
   console.log(instructor);

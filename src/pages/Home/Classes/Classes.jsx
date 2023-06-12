@@ -15,8 +15,10 @@ import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { BASE_URL } from "../../../hooks/global";
 import useCart from "../../../hooks/useCart";
+import useTitle from "../../../hooks/useTitle";
 
 const Classes = ({ img, _id,courseId, title, seats, instructor, price }) => {
+  useTitle("Home");
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
   const { refetch } = useCart();

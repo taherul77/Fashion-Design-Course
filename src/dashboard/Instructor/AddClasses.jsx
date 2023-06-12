@@ -5,10 +5,12 @@ import Wrapper from "../../components/Wrapper/Wrapper";
 import SectionTitle from "../../components/SectionTitle/SectionTitle";
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import useTitle from "../../hooks/useTitle";
 
 const img_hosting_token = import.meta.env.VITE_Image_Upload_token;
 
 const AddClasses = () => {
+  useTitle("Add Classes");
   const { user } = useContext(AuthContext);
  
   const [axiosSecure] = useAxiosSecure();

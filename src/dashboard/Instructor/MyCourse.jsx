@@ -3,8 +3,10 @@ import { BASE_URL } from "../../hooks/global";
 import useFetch from "../../hooks/useFetch";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { AiOutlineCreditCard } from "react-icons/ai";
+import useTitle from "../../hooks/useTitle";
 
 const MyCourse = () => {
+  useTitle("My Course");
   const { user } = useContext(AuthContext);
 
   const getMyClasses = useFetch(`${BASE_URL}/get-my-course/${user.email}`);

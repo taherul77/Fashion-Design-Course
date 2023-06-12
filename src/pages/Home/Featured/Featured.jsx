@@ -1,6 +1,8 @@
+import useTitle from "../../../hooks/useTitle";
 import "./Featured.css";
 
 const Featured = () => {
+  useTitle("Home");
   return (
     <div className="featured-item bg-fixed text-black pt-8 my-6 bg-slate-300 bg-opacity-25">
       <div className="">

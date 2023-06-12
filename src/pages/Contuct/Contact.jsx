@@ -1,6 +1,8 @@
 import img from '../../assets/top-banner.gif'
 import TopBanner from '../../components/TopBanner/TopBanner';
+import useTitle from '../../hooks/useTitle';
 const Contact = () => {
+  useTitle("Contact");
   return (
     <div>
       <div>

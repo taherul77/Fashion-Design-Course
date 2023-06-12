@@ -7,8 +7,10 @@ import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import { GoogleAuthProvider } from "firebase/auth";
 import { FcGoogle } from "react-icons/fc";
+import useTitle from "../../hooks/useTitle";
 
 const Register = () => {
+  useTitle("Register");
   const { createUser } = useContext(AuthContext);
   const [error, setError] = useState("");
 
@@ -35,7 +37,7 @@ const Register = () => {
           photoURL: user.photoURL,
           role: "student",
         };
-        fetch("http://localhost:5000/users", {
+        fetch("https://summer-camp-server-mauve.vercel.app/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -80,7 +82,7 @@ const Register = () => {
             photoURL: data.photo,
             role: "student",
           };
-          fetch("http://localhost:5000/users", {
+          fetch("https://summer-camp-server-mauve.vercel.app/users", {
             method: "POST",
             headers: {
               "content-type": "application/json",

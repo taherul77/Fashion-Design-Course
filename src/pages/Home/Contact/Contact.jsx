@@ -1,6 +1,8 @@
+import useTitle from "../../../hooks/useTitle";
 
 
 const Contact = () => {
+  useTitle("Home");
     return (
         <div>
             <section className="">

@@ -1,5 +1,7 @@
 import dashboard from '../../assets/dashboard.svg'
+import useTitle from '../../hooks/useTitle';
 const DashBoardHome = () => {
+  useTitle("Dashboard Home");
     return (
         <div className="p-10 w-full flex flex-col items-center">
         <div className="">

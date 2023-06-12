@@ -6,9 +6,11 @@ import Wrapper from "../../components/Wrapper/Wrapper";
 
 import Classes from "../Home/Classes/Classes";
 import img from '../../assets/top-banner.gif'
+import useTitle from "../../hooks/useTitle";
 
 const AllClasses = () => {
-  const getClasses = useFetch("http://localhost:5000/course");
+  useTitle("AllClasses");
+  const getClasses = useFetch("https://summer-camp-server-mauve.vercel.app/course");
 
   const { data, loading } = getClasses;
 

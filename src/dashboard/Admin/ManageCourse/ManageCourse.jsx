@@ -3,8 +3,10 @@ import Swal from "sweetalert2";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import useAllCourse from "../../../hooks/useAllCourse";
 import { useState } from "react";
+import useTitle from "../../../hooks/useTitle";
 
 const ManageCourse = () => {
+  useTitle("Manage Course");
   const { course, refetch } = useAllCourse();
   console.log(course);
   const [axiosSecure] = useAxiosSecure();

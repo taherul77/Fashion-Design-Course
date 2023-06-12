@@ -2,7 +2,9 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import useTitle from "../../../hooks/useTitle";
 const Instructors = ({ img, instructor, email, taken }) => {
+  useTitle("Instructor");
   useEffect(() => {
     AOS.init();
 }, []);
