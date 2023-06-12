@@ -7,14 +7,46 @@ import { AuthContext } from "../../Provider/AuthProvider";
 
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
+import { GoogleAuthProvider } from "firebase/auth";
 
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
   const [error, setError] = useState("");
+  const from = location.state?.from?.pathname || "/";
   const { register, handleSubmit, reset, formState: { errors } } = useForm();
-  const { profileUpdate } = useContext(AuthContext);
+  const { profileUpdate ,logInWithGoogle } = useContext(AuthContext);
 
+  const handleGoogleSignIn = () => {
+    logInWithGoogle(GoogleAuthProvider)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        const saveUser = { displayName: user.displayName,
+          email: user.email,
+          photoURL: user.photoURL,role: "student" }
+        fetch('http://localhost:5000/users', {
+          method: 'POST',
+          headers: {
+              'content-type': 'application/json'
+          },
+          body: JSON.stringify(saveUser)
+      })
+          .then(res => res.json())
+          .then(data => {
+              if (data.insertedId) {
+                setError("");   
+              }
+          })
+          navigate(from, { replace: true });
+        
+      })
+      .catch((error) => {
+        console.error(error);
+        setError(error.message);
+      });
+
+  };
   const [accepted, setAccepted] = useState(false);
   const navigate = useNavigate();
 
@@ -138,11 +170,11 @@ const Register = () => {
                       {error.split("Firebase:")}
                     </p>
                   </small>
-                  <button
+                  <button onClick={handleGoogleSignIn}
                     type="submit"
                     className="block w-full p-3 text-center px-6 py-2 font-bold text-cyan-50 border-md rounded-md  bg-gradient-to-r from-blue-400 to-purple-500"
                   >
-                    Log in
+                    REGISTER NOW
                   </button>
                 </form>
                 <div className="flex items-center pt-4 space-x-1">

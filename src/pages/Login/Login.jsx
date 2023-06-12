@@ -136,8 +136,8 @@ const Login = () => {
                   <p className="px-3 text-sm">Login with social accounts</p>
                   <div className="flex-1 h-px sm:w-16 bg-gray-700"></div>
                 </div>
-                <div className="flex flex-col justify-center lg:flex-row lg:justify-between">
-                  <button onClick={handleGoogleSignIn} className="btn btn-circle btn-outline">
+                <div className="flex flex-col justify-center items-center lg:flex-row lg:justify-between">
+                  <button onClick={handleGoogleSignIn} className="btn items-center justify-center btn-circle btn-outline">
                     G
                   </button>
                 </div>

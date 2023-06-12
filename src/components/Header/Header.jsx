@@ -2,16 +2,15 @@ import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 
-
 import { CgProfile } from "react-icons/cg";
 import { LuShoppingBag } from "react-icons/lu";
 import useCart from "../../hooks/useCart";
 
-
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
-  const {course} = useCart();
+  const { course } = useCart();
   
+
   const signOut = () => {
     logOut()
       .then(() => {
@@ -57,8 +56,7 @@ const Header = () => {
         </NavLink>
       </li>
 
-      
- <li>
+      <li>
         <NavLink
           to="/instructors"
           aria-label="Our InstructorsPage"
@@ -86,8 +84,6 @@ const Header = () => {
           CONTACT US
         </NavLink>
       </li>
-
-     
     </>
   );
 
@@ -116,50 +112,60 @@ const Header = () => {
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-black rounded-box w-52"
           >
             {navItem}
-            
-            {
-                user?.uid ? (< >
-                  <li>
-              <Link
-                to="/login"
-                className="px-6 py-2 font-bold  border-md rounded-md hidden   "
-                aria-label="login"
-                title="login"
-              >
-                login
-              </Link>
-            </li>
-                
-                </>):( < >
-                
-                    <li>
-              <Link
-                to="/login"
-                className="px-6 py-2 font-bold  border-md rounded-md   bg-fuchsia-900  hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
-                aria-label="login"
-                title="login"
-              >
-                login
-              </Link>
-            </li>
-                </>)
-            }
-          
+
+            {user?.uid ? (
+              <>
+                <li>
+                  <Link
+                    to="/login"
+                    className="px-6 py-2 font-bold  border-md rounded-md hidden   "
+                    aria-label="login"
+                    title="login"
+                  >
+                    login
+                  </Link>
+                </li>
+              </>
+            ) : (
+              <>
+                <li>
+                  <Link
+                    to="/login"
+                    className="px-6 py-2 font-bold  border-md rounded-md   bg-fuchsia-900  hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
+                    aria-label="login"
+                    title="login"
+                  >
+                    login
+                  </Link>
+                </li>
+              </>
+            )}
           </ul>
         </div>
         <Link to="/">
-        <h2 className="uppercase text-3xl">Fashion Design</h2>
+          <h2 className="uppercase text-3xl">Fashion Design</h2>
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex lg:gap-10">
-        
-        
-        
         <ul className=" text-xl menu-horizontal lg:gap-8 px-1">{navItem}</ul>
-      
+        {user?.uid ? (
+          
+            <NavLink
+              to="/dashboard"
+              aria-label="Our HomePage"
+              title="Our HomePage"
+              className={({ isActive }) =>
+                isActive
+                  ? "  underline decoration-double text-xl decoration-sky-600 text-white"
+                  : "font-medium text-xl  text-white"
+              }
+            >
+              DASHBOARD
+            </NavLink>
+          
+        ):('')}
       </div>
       <div className="navbar-end gap-4">
-       
         {user?.uid ? (
           <>
             <div className="dropdown dropdown-hover dropdown-end">
@@ -213,12 +219,14 @@ const Header = () => {
             </ul>
           </>
         )}
-         <Link to="/dashboard/my-selected">
+        <Link to="/dashboard/my-selected">
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle">
               <div className="indicator text-2xl">
                 <LuShoppingBag></LuShoppingBag>
-                <span className="badge badge-sm indicator-item">+{course?.length}</span>
+                <span className="badge badge-sm indicator-item">
+                  +{course?.length}
+                </span>
               </div>
             </label>
           </div>
