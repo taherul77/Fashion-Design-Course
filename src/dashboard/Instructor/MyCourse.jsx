@@ -1,78 +1,19 @@
-import { AiOutlineDelete } from "react-icons/ai";
-import Swal from "sweetalert2";
-import useAxiosSecure from "../../../hooks/useAxiosSecure";
-import useAllCourse from "../../../hooks/useAllCourse";
-import { useState } from "react";
+import { useContext } from "react";
+import { BASE_URL } from "../../hooks/global";
+import useFetch from "../../hooks/useFetch";
+import { AuthContext } from "../../Provider/AuthProvider";
 
-const ManageCourse = () => {
-  const { course, refetch } = useAllCourse();
+const MyCourse = () => {
+  const { user } = useContext(AuthContext);
+
+  const getMyClasses = useFetch(`${BASE_URL}/get-my-course/${user.email}`);
+
+  const { data } = getMyClasses;
+
+  const course = data;
+  console.log("====================================");
   console.log(course);
-  const [axiosSecure] = useAxiosSecure();
-  const [singleItem, setSingleItem] = useState({})
-
-  const handleUpdateStatus = (item) => {
-    axiosSecure.patch("/update/course", item).then((res) => {
-      refetch();
-      if (res.data.modifiedCount > 0) {
-        Swal.fire("Update!", "This course is approved.", "success");
-      }
-    });
-  };
-
-  // const handleUpdateDenyStatus = (item) => {
-  //   axiosSecure.patch("/update/course", item).then((res) => {
-  //     refetch();
-  //     if (res.data.modifiedCount > 0) {
-  //       Swal.fire("Update!", "This course is approved.", "success");
-  //     }
-  //   });
-  // };
-
-  const handleCloseModal = () => {
-    window.my_modal_3.open = false;
-  };
-  const handleOpenModal = () => {
-    window.my_modal_3.open = true;
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const form = e.target;
-    const feedback = form.feedback.value;
-    console.log({ feedback });
-
-    singleItem.feedback = feedback
-    axiosSecure.patch("/update/course/deny", singleItem).then((res) => {
-      refetch();
-      if (res.data.modifiedCount > 0) {
-        setSingleItem({})
-        window.my_modal_3.open = false;
-        Swal.fire("Update!", "This course is denied.", "success");
-      }
-    });
-  };
-
-  const handleDelete = (item) => {
-    Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        axiosSecure.delete(`/course/${item._id}`).then((res) => {
-          console.log("deleted res", res.data);
-          if (res.data.deletedCount > 0) {
-            refetch();
-            Swal.fire("Deleted!", "Your file has been deleted.", "success");
-          }
-        });
-      }
-    });
-  };
+  console.log("====================================");
   return (
     <div className="w-full max-auto">
       <section className="container mt-10 px-4 mx-auto">
@@ -197,29 +138,11 @@ const ManageCourse = () => {
                             </button>
                           ) : (
                             <>
-                              <button
-                                onClick={() => handleUpdateStatus(item)}
-                                className="btn-sm mr-2 text-xl rounded-md text-white bg-yellow-500 transition-colors duration-200 hover:text-black focus:outline-none"
-                              >
+                              <button className="btn-sm text-xl cursor-default rounded-md text-white bg-red-600 transition-colors duration-200 hover:text-black focus:outline-none">
                                 Pending
-                              </button>
-                              <button
-                                onClick={() => {handleOpenModal(), setSingleItem(item)}}
-                                className="btn-sm text-xl rounded-md text-white bg-red-600 transition-colors duration-200 hover:text-black focus:outline-none"
-                              >
-                                Deny
                               </button>
                             </>
                           )}
-                        </td>
-
-                        <td className="flex gap-5 px-4 py-4 text-sm whitespace-nowrap">
-                          <button
-                            onClick={() => handleDelete(item)}
-                            className="btn-sm text-xl text-white bg-red-600 transition-colors duration-200 hover:text-black focus:outline-none"
-                          >
-                            <AiOutlineDelete></AiOutlineDelete>
-                          </button>
                         </td>
                       </tr>
                     ))}
@@ -228,37 +151,10 @@ const ManageCourse = () => {
               </div>
             </div>
           </div>
-          <dialog id="my_modal_3" className="modal">
-            <form method="dialog" onSubmit={handleSubmit} className="modal-box">
-              <button
-                type="button"
-                onClick={() => handleCloseModal()}
-                htmlFor="my-modal-3"
-                className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
-              >
-                ✕
-              </button>
-              <h3 className="font-bold text-lg text-center">
-                Write your feedback for deny
-              </h3>
-              <textarea
-                placeholder="Your Feedback"
-                name="feedback"
-                className="textarea textarea-bordered textarea-lg w-full mt-5"
-              ></textarea>
-
-              <button
-                type="submit"
-                className="btn btn-md bg-sky-500 text-white w-full mt-5"
-              >
-                Submit
-              </button>
-            </form>
-          </dialog>
         </div>
       </section>
     </div>
   );
 };
 
-export default ManageCourse;
+export default MyCourse;

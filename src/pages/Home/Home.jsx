@@ -13,11 +13,11 @@ import Featured from "./Featured/Featured";
 
 const Home = () => {
   useTitle("Home");
-  const getClasses = useFetch(`${BASE_URL}/course`);
+  const getClasses = useFetch(`${BASE_URL}/popular-course`);
 
   const { data, loading } = getClasses;
 
-  const classesItems = data?.slice(0, 6);
+  const classesItems = data;
 
   return (
     <div>

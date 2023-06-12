@@ -1,4 +1,4 @@
-import {  NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import {
   FaShoppingCart,
   FaWallet,
@@ -13,14 +13,12 @@ import { useContext } from "react";
 import useStudent from "../../hooks/isStudent";
 import useInstructorDashboard from "../../hooks/isInstructor";
 
-
-
 const Dashboard = () => {
-  const {user} = useContext(AuthContext)
-  const  [isAdmin]  = useAdmin(user?.email);
-  const [isStudent] = useStudent(user?.email)
- const [isInstructor] = useInstructorDashboard(user?.email)
-  
+  const { user } = useContext(AuthContext);
+  const [isAdmin] = useAdmin();
+  const [isStudent] = useStudent(user?.email);
+  const [isInstructor] = useInstructorDashboard(user?.email);
+
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -46,8 +44,8 @@ const Dashboard = () => {
                   title="Our HomePage"
                   className={({ isActive }) =>
                     isActive
-                    ? " border-md uppercase rounded-md bg-white text-black"
-                    : "font-medium uppercase text-white"
+                      ? " border-md uppercase rounded-md bg-white text-black"
+                      : "font-medium uppercase text-white"
                   }
                 >
                   <FaHome></FaHome> ADMIN HOME
@@ -61,8 +59,8 @@ const Dashboard = () => {
                   title="Our HomePage"
                   className={({ isActive }) =>
                     isActive
-                    ? " border-md uppercase rounded-md bg-white text-black"
-                    : "font-medium uppercase text-white"
+                      ? " border-md uppercase rounded-md bg-white text-black"
+                      : "font-medium uppercase text-white"
                   }
                 >
                   <FaWallet></FaWallet> Manage Classes
@@ -76,18 +74,17 @@ const Dashboard = () => {
                   title="Our HomePage"
                   className={({ isActive }) =>
                     isActive
-                    ? " border-md uppercase rounded-md bg-white text-black"
-                    : "font-medium uppercase text-white"
+                      ? " border-md uppercase rounded-md bg-white text-black"
+                      : "font-medium uppercase text-white"
                   }
                 >
                   <FaUsers></FaUsers> Manage USERS
                 </NavLink>
               </li>
             </>
-          ) }
-          {
-            isStudent && (
-              <>
+          )}
+          {isStudent && (
+            <>
               <li>
                 <NavLink
                   to="/dashboard/student-home"
@@ -95,8 +92,8 @@ const Dashboard = () => {
                   title="Our HomePage"
                   className={({ isActive }) =>
                     isActive
-                    ? " border-md uppercase rounded-md bg-white text-black"
-                    : "font-medium uppercase text-white"
+                      ? " border-md uppercase rounded-md bg-white text-black"
+                      : "font-medium uppercase text-white"
                   }
                 >
                   <FaHome></FaHome> MY HOME Page
@@ -110,8 +107,8 @@ const Dashboard = () => {
                   title="Our HomePage"
                   className={({ isActive }) =>
                     isActive
-                    ? " border-md uppercase rounded-md bg-white text-black"
-                    : "font-medium uppercase text-white"
+                      ? " border-md uppercase rounded-md bg-white text-black"
+                      : "font-medium uppercase text-white"
                   }
                 >
                   <FaWallet></FaWallet>MY PAYMENT HISTORY
@@ -129,7 +126,6 @@ const Dashboard = () => {
                   }
                 >
                   <FaShoppingCart></FaShoppingCart> My Selected Classes{" "}
-                  
                 </NavLink>
               </li>
 
@@ -140,54 +136,48 @@ const Dashboard = () => {
                   title="Our HomePage"
                   className={({ isActive }) =>
                     isActive
-                    ? " border-md uppercase rounded-md bg-white text-black"
-                    : "font-medium uppercase text-white"
+                      ? " border-md uppercase rounded-md bg-white text-black"
+                      : "font-medium uppercase text-white"
                   }
                 >
                   <FaBookmark></FaBookmark>My Enrolled Classes
                 </NavLink>
               </li>
             </>
-            )
-          }
+          )}
 
-{
-  isInstructor &&(
-    <>
-    <li>
+          {isInstructor && (
+            <>
+              <li>
                 <NavLink
                   to="/dashboard/add-Class"
                   aria-label="Our HomePage"
                   title="Our HomePage"
                   className={({ isActive }) =>
                     isActive
-                    ? " border-md uppercase rounded-md bg-white text-black"
-                    : "font-medium uppercase text-white"
+                      ? " border-md uppercase rounded-md bg-white text-black"
+                      : "font-medium uppercase text-white"
                   }
                 >
                   <FaBookmark></FaBookmark>Add Class
                 </NavLink>
               </li>
-    <li>
+              <li>
                 <NavLink
-                  to="/dashboard/my-product"
+                  to="/dashboard/get-my-course"
                   aria-label="Our HomePage"
                   title="Our HomePage"
                   className={({ isActive }) =>
                     isActive
-                    ? " border-md uppercase rounded-md bg-white text-black"
-                    : "font-medium uppercase text-white"
+                      ? " border-md uppercase rounded-md bg-white text-black"
+                      : "font-medium uppercase text-white"
                   }
                 >
-                  <FaBookmark></FaBookmark>MY Product
+                  <FaBookmark></FaBookmark>MY Class
                 </NavLink>
               </li>
-                
-
-              </>
-  )
-}
-
+            </>
+          )}
 
           <div className="divider"></div>
           <li>

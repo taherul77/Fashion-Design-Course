@@ -19,6 +19,8 @@ import AddClasses from "../dashboard/Instructor/AddClasses";
 import Payment from "../dashboard/Payment/Payment";
 import Contact from "../pages/Contuct/Contact";
 import Error from "../pages/Error/Error";
+import MyCourse from "../dashboard/Instructor/MyCourse";
+import AdminRoute from "./AdminRoute";
 
 
 
@@ -91,7 +93,7 @@ export const router = createBrowserRouter([
         },
         {
           path:'manage-user',
-          element:<ManageUser></ManageUser>
+          element:<AdminRoute><ManageUser></ManageUser></AdminRoute>
         },
         {
           path:'manage-classes',
@@ -100,6 +102,10 @@ export const router = createBrowserRouter([
         {
           path:'add-Class',
           element: <AddClasses></AddClasses>
+        },
+        {
+          path:'get-my-course',
+          element: <MyCourse></MyCourse>
         }
        
       ]

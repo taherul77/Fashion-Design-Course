@@ -25,17 +25,14 @@ const Banner = () => {
          <div data-aos="fade-up-left"> <h2 className="px-3 text-3xl uppercase font-black text-transparent  bg-clip-text bg-gradient-to-r from-blue-500 to-sky-600">
             Online Education from Fashion Industry Leaders
           </h2></div>
+          
           <p  className="mt-6 px-3 mb-8 text-xl sm:mb-12 text-violet-800">
             Discover the business of fashion and the cultural impact of the
             fashion industry with courses from industry leaders.
           </p>
           <div className="flex flex-col px-3 space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
-           <TypewriterAnimation
-           text = "Enrolled Now"
-           className="px-8 py-2 uppercase font-bold text-cyan-50 border-md rounded-md bg-pink-400  bg-gradient-to-r from-pink-500 to-sky-300"
-           >
-
-           </TypewriterAnimation>
+         
+           <button className="px-8 py-2 uppercase font-bold text-cyan-50 border-md rounded-md bg-pink-400  bg-gradient-to-r from-pink-500 to-sky-300" >ENROLLED NOW</button>
            
            
           </div>
