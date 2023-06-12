@@ -77,13 +77,13 @@ const handlePay = (data) => {
                 No item available
               </h1>
               <Link
-                to={"/shop"}
+                to={"/"}
                 className="flex items-center justify-center gap-2 mt-5 lg:mt-10 cursor-pointer"
               >
                 <button
                   className={"rounded-sm bg-neutral md:text-xl uppercase"}
                 >
-                  Order some food
+                  Go To Course
                 </button>
               </Link>
             </div>
