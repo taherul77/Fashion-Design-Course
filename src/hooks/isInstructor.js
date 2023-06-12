@@ -1,12 +1,14 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { BASE_URL } from "./global";
+import { AuthContext } from "../Provider/AuthProvider";
 
-const useInstructorDashboard = (email) => {
+const useInstructorDashboard = () => {
+  const { user } = useContext(AuthContext);
   const [isInstructor, setIsInstructor] = useState(false);
   const [isInstructorLoading, setIsInstructorLoading] = useState(true);
   useEffect(() => {
-    if (email) {
-      fetch(`${BASE_URL}/users/${email}`)
+    if (user?.email) {
+      fetch(`${BASE_URL}/users/${user?.email}`)
         .then((res) => res.json())
         .then((data) => {
          
@@ -19,7 +21,7 @@ const useInstructorDashboard = (email) => {
           return;
         });
     }
-  }, [email]);
+  }, [user?.email]);
   return [isInstructor, isInstructorLoading];
 };
 

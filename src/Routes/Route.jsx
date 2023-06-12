@@ -22,6 +22,7 @@ import Error from "../pages/Error/Error";
 import MyCourse from "../dashboard/Instructor/MyCourse";
 import AdminRoute from "./AdminRoute";
 import DashBoardHome from "../dashboard/DashboardHome/DashBoardHome";
+import Instructor from "./Instructor";
 
 
 
@@ -102,11 +103,11 @@ export const router = createBrowserRouter([
         },
         {
           path:'add-Class',
-          element: <AddClasses></AddClasses>
+          element: <Instructor><AddClasses></AddClasses></Instructor>
         },
         {
           path:'get-my-course',
-          element: <MyCourse></MyCourse>
+          element: <Instructor><MyCourse></MyCourse></Instructor>
         },
         {
           path:'dashboard-home',
