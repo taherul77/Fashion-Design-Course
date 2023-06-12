@@ -1,12 +1,21 @@
 import { AiOutlineDelete, AiOutlineCreditCard } from "react-icons/ai";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
-import useCourse from "../../../hooks/useCourse";
-
+import useAllCourse from "../../../hooks/useAllCourse";
 
 const ManageCourse = () => {
-  const {course, refetch} = useCourse();
+  const { course, refetch } = useAllCourse();
   const [axiosSecure] = useAxiosSecure();
+
+  const handleUpdateStatus = (item) => {
+    axiosSecure.patch("/update/course", item).then((res) => {
+      refetch();
+      if (res.data.modifiedCount > 0) {
+        Swal.fire("Update!", "This course is approved.", "success");
+      }
+
+    });
+  };
 
   const handleDelete = (item) => {
     Swal.fire({
@@ -82,6 +91,15 @@ const ManageCourse = () => {
                         scope="col"
                         className="px-4 py-3.5 text-sm font-normal text-center  "
                       >
+                        <button className="flex items-center gap-x-2">
+                          <span>Status</span>
+                        </button>
+                      </th>
+
+                      <th
+                        scope="col"
+                        className="px-4 py-3.5 text-sm font-normal text-center  "
+                      >
                         ACTION
                       </th>
                     </tr>
@@ -109,6 +127,21 @@ const ManageCourse = () => {
                         </td>
                         <td className="px-4 py-4 text-sm text-start whitespace-nowrap">
                           {item.price}
+                        </td>
+
+                        <td className="px-4 py-4 text-sm text-start whitespace-nowrap">
+                          {item.status === true ? (
+                            <small className="badge bg-green-500 text-white py-4">
+                              Approve
+                            </small>
+                          ) : (
+                            <small
+                              onClick={() => handleUpdateStatus(item)}
+                              className="badge bg-yellow-500 text-white py-4 cursor-pointer"
+                            >
+                              Pending
+                            </small>
+                          )}
                         </td>
 
                         <td className="flex gap-5 px-4 py-4 text-sm whitespace-nowrap">

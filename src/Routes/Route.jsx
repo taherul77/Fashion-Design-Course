@@ -18,6 +18,7 @@ import Fail from "../components/Fail/Fail";
 import AddClasses from "../dashboard/Instructor/AddClasses";
 import Payment from "../dashboard/Payment/Payment";
 import Contact from "../pages/Contuct/Contact";
+import Error from "../pages/Error/Error";
 
 
 
@@ -27,6 +28,7 @@ export const router = createBrowserRouter([
     {
       path: "/",
       element: <App></App>,
+      errorElement:<Error></Error>,
       children: [
         {
           path: "/",
@@ -63,6 +65,7 @@ export const router = createBrowserRouter([
           element:<Contact></Contact>
 
         }
+        
        
       ]
     },

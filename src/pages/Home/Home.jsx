@@ -35,6 +35,7 @@ const Home = () => {
               {classesItems?.map((classesItem) => (
                 <Classes
                   key={classesItem?._id}
+                  courseId={classesItem?.courseId}
                   img={classesItem?.image}
                   title={classesItem?.name}
                   seats={classesItem?.available_seats}

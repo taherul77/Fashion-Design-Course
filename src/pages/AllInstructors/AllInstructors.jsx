@@ -12,7 +12,7 @@ const AllInstructors = () => {
   useTitle("Home");
 
   const {course:instructor ,isLoading} = useInstructor();
- 
+  console.log(instructor);
 
 
     return (
@@ -29,7 +29,7 @@ const AllInstructors = () => {
               <div className="grid grid-cols-12 gap-10">
                 {instructor?.map((instructorItem) => (
                   <Instructors
-                  key={instructorItem?._id}
+                  key={instructorItem?.instructor?._id}
                   img={instructorItem?.instructor?.image}
                   instructor={instructorItem?.instructor?.name}
                   email={instructorItem?.instructor?.email}
