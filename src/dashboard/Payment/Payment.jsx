@@ -43,6 +43,14 @@ const Payment = () => {
                         className="px-4 py-3.5 text-sm font-normal text-center  "
                       >
                         <button className="flex uppercase items-center gap-x-2">
+                          <span>Price</span>
+                        </button>
+                      </th>
+                      <th
+                        scope="col"
+                        className="px-4 py-3.5 text-sm font-normal text-center  "
+                      >
+                        <button className="flex uppercase items-center gap-x-2">
                           <span>Transaction Id</span>
                         </button>
                       </th>
@@ -57,6 +65,9 @@ const Payment = () => {
 
                         <td className="px-4 py-4 text-sm pl-5 md:pl-0 lg:text-center whitespace-nowrap">
                           {course?.order?.title}
+                        </td>
+                        <td className="px-4 py-4 text-sm pl-5 md:pl-0 lg:text-start whitespace-nowrap">
+                          {course?.order?.price}
                         </td>
 
                         <td className="px-4 py-4 text-sm text-start whitespace-nowrap">

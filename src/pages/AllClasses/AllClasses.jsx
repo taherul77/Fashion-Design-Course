@@ -27,7 +27,7 @@ const AllClasses = () => {
           <Loader />
         ) : (
           <>
-            <div className="grid grid-cols-12 gap-10">
+            <div className="grid grid-cols-12 gap-5">
               {classesItems?.map((classesItem) => (
                 <Classes
                   key={classesItem?._id}

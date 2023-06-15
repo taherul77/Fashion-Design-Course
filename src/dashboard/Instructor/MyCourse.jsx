@@ -14,9 +14,7 @@ const MyCourse = () => {
   const { data } = getMyClasses;
 
   const course = data;
-  console.log("====================================");
-  console.log(course);
-  console.log("====================================");
+console.log(course);
   return (
     <div className="w-full max-auto">
       <section className="container mt-10 px-4 mx-auto">
@@ -148,9 +146,8 @@ const MyCourse = () => {
                         <td className="px-4 py-4 text-sm text-start whitespace-nowrap">
                           {item.totalEnroll}
                         </td>
-                        <td className="px-4 py-4 text-sm text-start whitespace-nowrap">
-                          {item.feedback}
-                        </td>
+                        
+                        
 
                         <td className="px-4 py-4 text-sm text-start whitespace-nowrap">
                           {item.status === "approve" ? (
@@ -168,6 +165,9 @@ const MyCourse = () => {
                               </button>
                             </>
                           )}
+                        </td>
+                        <td className="px-4 py-4 text-sm text-start whitespace-nowrap">
+                          {item.feedback}
                         </td>
                         <th>
                           <button className="btn btn-ghost text-2xl btn-xs">

@@ -13,14 +13,14 @@ const Banner = () => {
 }, []);
   return (
     <section className="">
-      <div className=" banner-bg flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
+      <div className=" banner-bg object-cover w-full flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
         <div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
           {/* <p className="inline-block px-3 py-px mb-4 text-2xl font-bold  text-transparent  bg-clip-text bg-gradient-to-r from-pink-500 to-sky-600">
             UNIQUE FASHION DESIGN COURSE
           </p> */}
           <TypewriterAnimation
             text=" UNIQUE FASHION DESIGN COURSE"
-            className="inline-block px-3 py-px mb-4 text-xl font-bold  text-transparent  bg-clip-text bg-gradient-to-r from-pink-500 to-sky-600"
+            className="inline-block px-3 py-px mb-4 pt-28 lg:pt-0 text-xl font-bold  text-transparent  bg-clip-text bg-gradient-to-r from-pink-500 to-sky-600"
           />
          <div data-aos="fade-up-left"> <h2 className="px-3 text-3xl uppercase font-black text-transparent  bg-clip-text bg-gradient-to-r from-blue-500 to-sky-600">
             Online Education from Fashion Industry Leaders

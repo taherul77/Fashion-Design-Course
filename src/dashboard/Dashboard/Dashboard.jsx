@@ -6,6 +6,8 @@ import {
   FaBookmark,
   FaUsers,
 } from "react-icons/fa";
+import { MdOutlineClass } from "react-icons/md";
+import { AiTwotoneFileAdd } from "react-icons/ai";
 import { AiOutlineHome } from "react-icons/ai";
 import useAdmin from "../../hooks/isAdmin";
 import { AuthContext } from "../../Provider/AuthProvider";
@@ -159,7 +161,7 @@ const Dashboard = () => {
                       : "font-medium uppercase text-white"
                   }
                 >
-                  <FaBookmark></FaBookmark>Add Class
+                  <AiTwotoneFileAdd></AiTwotoneFileAdd>Add Class
                 </NavLink>
               </li>
               <li>
@@ -173,7 +175,7 @@ const Dashboard = () => {
                       : "font-medium uppercase text-white"
                   }
                 >
-                  <FaBookmark></FaBookmark>MY Class
+                  <MdOutlineClass></MdOutlineClass>MY Class
                 </NavLink>
               </li>
             </>

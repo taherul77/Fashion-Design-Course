@@ -19,17 +19,17 @@ const handlePay = (data) => {
   data.customerEmail = email
   console.log(data);
 
-  // fetch("https://summer-camp-server-mauve.vercel.app/order",{
-  //   method: "POST",
-  //   headers: {
-  //     "Content-Type": "application/json",
-  //   },
-  //   body: JSON.stringify(data)
-  // }).then(res => res.json())
-  // .then(data=> {
-  //   console.log(data);
-  //   window.location.replace(data.url)
-  // })
+  fetch("https://summer-camp-server-mauve.vercel.app/order",{
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data)
+  }).then(res => res.json())
+  .then(data=> {
+    console.log(data);
+    window.location.replace(data.url)
+  })
 }
   
   const handleDelete = (id) =>{
@@ -81,7 +81,7 @@ const handlePay = (data) => {
                 className="flex items-center justify-center gap-2 mt-5 lg:mt-10 cursor-pointer"
               >
                 <button
-                  className={"rounded-sm bg-neutral md:text-xl uppercase"}
+                  className={"rounded-sm bg-sky-500 text-white md:text-xl uppercase"}
                 >
                   Go To Course
                 </button>
@@ -92,12 +92,12 @@ const handlePay = (data) => {
           <div className="lg:flex lg:gap-x-4">
             <table className="table">
               
-              <thead className="bg-sky-500 rounded-lg">
+              <thead className="bg-sky-500 text-white rounded-lg">
                 <tr>
                   <th></th>
-                  <th>Name</th>
-                  <th>Job</th>
-                  <th>Favorite Color</th>
+                  <th>Image</th>
+                  <th>Course Name</th>
+                  <th>Course Price</th>
                   <th></th>
                 </tr>
               </thead>
@@ -123,11 +123,11 @@ const handlePay = (data) => {
                         </div>
                       </div>
                     </td>
-                    <td>Zemlak, Daniel and Leannon</td>
+                    <td>{course.title}</td>
                     <td>{course.price}</td>
                     <th>
 
-                      <button onClick={() => handlePay(course)}  className="btn btn-ghost text-2xl btn-xs">
+                      <button onClick={() => handlePay(course)}  className="btn btn-warning text-2xl">
                        Pay
                       </button>
                       <button onClick={()=>handleDelete(course?._id)} className="btn btn-ghost text-2xl btn-xs">

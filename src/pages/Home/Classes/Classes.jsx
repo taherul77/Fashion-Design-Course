@@ -112,7 +112,7 @@ const Classes = ({ img, _id,courseId, title, seats, instructor, price }) => {
           onMouseOut={handleMouseOut}
           className="hover:shadow-md rounded-md cursor-pointer"
         >
-         <div data-aos="flip-right"> <img className="border border-b-0 border-gray-400" src={img} alt="" /></div>
+         <div data-aos="flip-right"> <img className="border object-cover border-b-0 border-gray-400" src={img} alt="" /></div>
           <div className="text-center pt-5 pb-12 space-y-3 border border-gray-200 relative">
             <h2 className="text-2xl font-medium">{title?.slice(0, 28)}...</h2>
             <h3 className="text-xl font-medium">Instructor: {instructor}</h3>
