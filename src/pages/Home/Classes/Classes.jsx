@@ -106,15 +106,15 @@ const Classes = ({ img, _id,courseId, title, seats, instructor, price }) => {
 }, []);
   return (
     <>
-      <div className={`col-span-12 lg:col-span-4 ${seats < 1 ? "bg-red-500" : "bg-white"}`}>
+      <div className={`col-span-12 lg:col-span-3 ${seats < 1 ? "bg-red-500" : "bg-white"}`}>
         <div
           onMouseOver={handleMouseOver}
           onMouseOut={handleMouseOut}
           className="hover:shadow-md rounded-md cursor-pointer"
         >
          <div data-aos="flip-right"> <img className="border object-cover border-b-0 border-gray-400" src={img} alt="" /></div>
-          <div className="text-center pt-5 pb-12 space-y-3 border border-gray-200 relative">
-            <h2 className="text-2xl font-medium">{title?.slice(0, 28)}...</h2>
+          <div className=" sm:mb-5 lg:mb-0 lg:text-center pt-5 pb-12 space-y-3 border border-gray-200 relative">
+            <h2 className="text-2xl font-medium">{title}...</h2>
             <h3 className="text-xl font-medium">Instructor: {instructor}</h3>
             <h2 className="text-lg font-medium">${price}</h2>
             <h2>Available seats : {seats}</h2>
