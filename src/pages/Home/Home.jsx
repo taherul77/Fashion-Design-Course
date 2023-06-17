@@ -11,6 +11,7 @@ import Instructors from "./Instructors/Instructors";
 import { BASE_URL } from "../../hooks/global";
 import Featured from "./Featured/Featured";
 import Contact from "./Contact/Contact";
+import OurClasses from "./OurClasses/OurClasses";
 
 const Home = () => {
   useTitle("Home");
@@ -55,6 +56,22 @@ const Home = () => {
           </>
         )}
       </Wrapper>
+      {/* <Wrapper>
+        <SectionTitle
+        heading={"OUR CLASSES"}
+        >
+          {loading ?(
+            <Loader></Loader>
+          ):(
+            <>
+            <OurClasses></OurClasses>
+            
+            </>
+          )}
+        
+          
+        </SectionTitle>
+      </Wrapper> */}
       <Wrapper>
         <SectionTitle
           SubHeading={"MOST LOVED"}
