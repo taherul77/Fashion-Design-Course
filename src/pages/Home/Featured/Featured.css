@@ -1,3 +1,5 @@
 .featured-item{
-    background-image: url('../../../assets/top-banner.gif');
+    background-image: url('../../../assets/fe.png');
+    background-size: cover;
+    height: 50vh;
 }

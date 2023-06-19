@@ -6,12 +6,12 @@ import useFetch from "../../hooks/useFetch";
 import useTitle from "../../hooks/useTitle";
 import Banner from "./Banner/Banner";
 import Classes from "./Classes/Classes";
-
+import Marquee from "react-fast-marquee";
 import Instructors from "./Instructors/Instructors";
 import { BASE_URL } from "../../hooks/global";
 import Featured from "./Featured/Featured";
 import Contact from "./Contact/Contact";
-import OurClasses from "./OurClasses/OurClasses";
+
 
 const Home = () => {
   useTitle("Home");
@@ -24,6 +24,12 @@ const Home = () => {
   return (
     <div>
       <Banner></Banner>
+
+      <Marquee>
+  I can be a React component, multiple React components, or just some text.
+</Marquee>
+
+
       <Wrapper>
         <SectionTitle
           SubHeading={"MOST POPULAR"}

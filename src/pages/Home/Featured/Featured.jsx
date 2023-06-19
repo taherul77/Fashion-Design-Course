@@ -8,7 +8,7 @@ const Featured = () => {
       <div className="">
         <div className="flex-col md:flex-row flex justify-center items-center gap-10 py-14 lg:py-28">
           <img className="md:w-6/12 h-auto rounded-sm" src="" alt="" />
-          <div className="text-white md:w-6/12 space-y-2 text-center md:text-left">
+          <div className="md:w-6/12 space-y-2 text-center md:text-left md:mr-5">
             <h5>March 20, 2023</h5>
             <h4 className="font-bold text-lg">WHERE CAN I GET SOME?</h4>
             <p>
