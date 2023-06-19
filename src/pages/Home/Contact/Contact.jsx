@@ -1,6 +1,6 @@
 import useTitle from "../../../hooks/useTitle";
 import Marquee from "react-fast-marquee";
-import { SiTailwindcss } from "react-icons/si";
+import { SiTailwindcss,SiSwiper,SiFirebase,SiAxios,SiReactquery,SiReactrouter,SiReact } from "react-icons/si";
 import { GiDaisy } from "react-icons/gi";
 
 const Contact = () => {
@@ -11,7 +11,7 @@ const Contact = () => {
         <div className="container p-6 mx-auto space-y-6 text-center lg:p-8 lg:space-y-8">
           <h2 className="text-3xl font-bold">PROJECT BASE ON</h2>
           <Marquee>
-            <div className="flex flex-wrap gap-16 justify-center lg:justify-between">
+            <div className="flex flex-wrap gap-24 justify-center lg:justify-between">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 32 32"
@@ -38,6 +38,30 @@ const Contact = () => {
               </div>
               <div className="">
               <GiDaisy className="w-12 h-12 mx-10 my-6 fill-current md:mx-12 lg:m-0 text-yellow-400"/>
+
+              </div>
+              <div className="">
+              <SiSwiper className="w-12 h-12 mx-10 my-6 fill-current md:mx-12 lg:m-0 text-blue-600"/>
+
+              </div>
+              <div className="">
+              <SiFirebase className="w-12 h-12 mx-10 my-6 fill-current md:mx-12 lg:m-0 text-yellow-400"/>
+
+              </div>
+              <div className="">
+              <SiAxios className="w-12 h-12 mx-10 my-6 fill-current md:mx-12 lg:m-0 text-blue-700"/>
+
+              </div>
+              <div className="">
+              <SiReactquery className="w-12 h-12 mx-10 my-6 fill-current md:mx-12 lg:m-0 text-yellow-500"/>
+
+              </div>
+              <div className="">
+              <SiReactrouter className="w-12 h-12 mx-10 my-6 fill-current md:mx-12 lg:m-0 text-red-400"/>
+
+              </div>
+              <div className="">
+              <SiReact className="w-12 h-12 mx-10 my-6 fill-current md:mx-12 lg:m-0 text-red-400"/>
 
               </div>
              

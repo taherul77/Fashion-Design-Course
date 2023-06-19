@@ -109,11 +109,11 @@ const Home = () => {
         )}
       </Wrapper>
       <Featured></Featured>
-      <Wrapper>
+      
       <div className="py-6">
       <Contact></Contact>
       </div>
-      </Wrapper>
+      
     </div>
   );
 };
